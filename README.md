@@ -24,7 +24,28 @@ An AdventureQuest Worlds Discord Helper bot. Completely overhauled from scratch 
 
 &nbsp;
 
-# Features/Commands
+# Command List
+- `;help` ➣ Shows all Bloom commands.
+- `;g` ➣ Summons a list of all guides commands.
+- `;g guide_name` ➣ Returns a specific guide.
+- `;c class_name` ➣ Shows Class data chart. Can use acronyms.
+- `;legends` ➣ Shows the legends for the class data charts.
+- `;char character_name` ➣ Shows Char pager info.
+- `;w search` ➣ Directly Search AQW Wikidot.
+- `;servers` ➣ Shows player count of Aqw servers.
+- `;credits` ➣ Reveals the credits.
+- `;invite` ➣ Get Bloom bot invite.
+
+### Admin Commands:
+- `;channels` ➣ Shows registered Feed Channels.
+- `;register_raqw` ➣ Set channel as r/AQW Feed.
+- `;unregister_raqw` ➣ Removes r/AQW Feed registry.
+- `;register_daily role_id` ➣ Set channel as Daily Gift Feed.
+- `;unregister_daily` ➣ Removes Daily Gift Feed registry.
+
+&nbsp;
+
+# Features
  - [Help](#help)
  - [Game Guide Helps](#game-guide-helps)
  - [Class Chart Search](#class-chart-search)
@@ -35,6 +56,7 @@ An AdventureQuest Worlds Discord Helper bot. Completely overhauled from scratch 
  - [r/AQW Reddit Feeds](#aqw-reddit-feeds)
 
 &nbsp;
+
 ----
 &nbsp;
 
