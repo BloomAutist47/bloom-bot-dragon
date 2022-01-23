@@ -182,7 +182,9 @@ export default class TwitterCog {
     }
 
     private async processTweet(tweet) {
-        if (tweet.user.screen_name.lower() != "alina_ae" ) return
+
+        // Check if Alina
+        if (tweet.user.screen_name.toLowerCase() != "alina_ae" ) return
 
         // Get text
         var text: string = ""
@@ -209,7 +211,6 @@ export default class TwitterCog {
             }
             
         }
-        
 
         // Get Date
         const date: Date = new Date(parseInt(tweet.timestamp_ms)) 
@@ -286,8 +287,13 @@ export default class TwitterCog {
            
         }
         if (!got_it) return
+        
+        // const subExists = await this.base.database.dbRead(`logger.twitter`, { _id: subObj.id }, true)
+        // if (subExists) return
 
         embed.setDescription(content)
+
+
 
         // Send to Channel
         for (const channelID in this.base.dailyChannels) {
