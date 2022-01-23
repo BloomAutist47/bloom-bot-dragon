@@ -178,7 +178,7 @@ export default class TwitterCog {
 
         // Bloom -> 1349290524901998592
         // Alina -> 16480141
-        this.twitter.follow('1349290524901998592')
+        this.twitter.follow('16480141')
     }
 
     private async processTweet(tweet) {
