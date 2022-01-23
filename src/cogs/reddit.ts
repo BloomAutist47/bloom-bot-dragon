@@ -257,15 +257,25 @@ export default class RedditCog {
         switch (subreddit) {
             case "AutoQuestWorlds":
                 for (const channelID in this.base.auqwChannels) {
-                    let loginChannel = await this.client.channels.cache.get(this.base.aqwChannels[channelID]) as TextChannel
-                    await loginChannel.send({ embeds: [embed] })
+                    try {
+                        let loginChannel = await this.client.channels.cache.get(this.base.auqwChannels[channelID]) as TextChannel
+                        await loginChannel.send({ embeds: [embed] })
+                    } catch (error) {
+                        console.log("[Reddit] Error:> ", error)
+                    }
+
                 }
                 break;
             case "AQW": 
             case "FashionQuestWorlds":
                 for (const channelID in this.base.aqwChannels) {
-                    let loginChannel = await this.client.channels.cache.get(this.base.aqwChannels[channelID]) as TextChannel
-                    await loginChannel.send({ embeds: [embed] })
+                    try {
+                        let loginChannel = await this.client.channels.cache.get(this.base.aqwChannels[channelID]) as TextChannel
+                        await loginChannel.send({ embeds: [embed] })
+                    } catch (error) {
+                        console.log("[Reddit] Error:> ", error)
+                    }
+
                 }
                 break;
             default:

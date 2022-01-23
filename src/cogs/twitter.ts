@@ -286,10 +286,15 @@ export default class TwitterCog {
         for (const channelID in this.base.dailyChannels) {
             let loginChannel = await this.client.channels.cache.get(this.base.dailyChannels[channelID].channel) as TextChannel
 
-            if (this.base.dailyChannels[channelID].hasOwnProperty('role') && this.base.dailyChannels[channelID].role != "") {
-                await loginChannel.send({ content: `\n<@&${this.base.dailyChannels[channelID].role}>` })
+            try {
+                if (this.base.dailyChannels[channelID].hasOwnProperty('role') && this.base.dailyChannels[channelID].role != "") {
+                    await loginChannel.send({ content: `\n<@&${this.base.dailyChannels[channelID].role}>` })
+                }
+                await loginChannel.send({ embeds: [embed] })
+            } catch (error) {
+                console.log("[Twitter] Error:> ", error)
             }
-            await loginChannel.send({ embeds: [embed] })
+
         }
     }
     
