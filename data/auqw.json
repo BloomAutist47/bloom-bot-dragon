@@ -1,0 +1,19 @@
+{
+    "daily": {
+        "location": "/join ebiltower",
+        "item": "0 AC House Item",
+        "date": "November 22, 2021",
+        "image": "https://i.imgur.com/v3HHBoT.jpg",
+        "link": "https://twitter.com/twitter/statuses/1462639678885085189",
+        "quest": "",
+        "enemy": [
+            "Ebilcorp Goons",
+            "http://aqwwiki.wikidot.com/EbilCorp-Goons"
+        ]
+    },
+    "boost": {
+        "item": "48 Hour Double Rep (Reputation) Boost",
+        "startsin": "November 22, 2021",
+        "endsin": "24 November 2021"
+    }
+}
