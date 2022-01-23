@@ -1,2 +1,4 @@
 clean_flash.js
 .env
+.unotes/
+.vscode/
