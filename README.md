@@ -2,10 +2,13 @@
 
 An AdventureQuest Worlds Discord Helper bot. Completely overhauled from scratch and ported from python to js. To invite the bot, simply use the link below. For any suggestions or concerns, join the Support Discord Server and we will help you.
 
-**Current Version**: v.2.0.0
-**Invitation Link**: [Bloom Bot](https://discord.com/api/oauth2/authorize?client_id=799639690176495637&permissions=268749888&scope=bot)
-**Discord Support**: [discord.gg/YcXzxPt593](https://discord.gg/YcXzxPt593)
-**Prefix**:
+**Details**
+- **Creator**: [Bloom Autist#4713](https://twitter.com/BloomAutist47)
+- **Current Version**: v.2.0.0
+- **Invitation Link**: [Bloom Bot](https://discord.com/api/oauth2/authorize?client_id=799639690176495637&permissions=268749888&scope=bot)
+- **Discord Support**: [discord.gg/YcXzxPt593](https://discord.gg/YcXzxPt593)
+
+**Prefix**
  - ` ; ` - Semi Colon
  - ` / ` - Slash
 
@@ -16,13 +19,13 @@ An AdventureQuest Worlds Discord Helper bot. Completely overhauled from scratch 
 - AE for creating this game we both love and hate.
 # Features/Commands
  - `;help` - Shows the help embed
- - [Game Guide Helps](##game-guide-helps)
- - [Class Chart Search](##class-chart-search)
- - [Player Search](##player-search)
- - [Fully Detailed Wiki Search](##wiki-search)
- - [Server Details](##server-details)
- - [Alina's Daily Gift Updates (Automated)](##alina's-daily-gift-updates)
- - [r/AQW Reddit Feeds](###AQW-Reddit-Feeds)
+ - [Game Guide Helps](#game-guide-helps)
+ - [Class Chart Search](#class-chart-search)
+ - [Player Search](#player-search)
+ - [Fully Detailed Wiki Search](#wiki-search)
+ - [Server Details](#server-details)
+ - [Alina's Daily Gift Updates (Automated)](#alina's-daily-gift-updates)
+ - [r/AQW Reddit Feeds](#aqw-reddit-feeds)
 
 ## Game Guide Helps
 **Description**: Contains a wide array of guides ranging from gold guide, xp guide, farming guides, ioda guides, alchemy guides, boosted set guides, and more...
