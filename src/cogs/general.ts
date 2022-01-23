@@ -81,7 +81,7 @@ export default class GeneralCog {
             embed.addField("Admin Commands:", `> \`${this.base.prefix}channels\` ➣ Shows registered Feed Channels.
                     > \`${this.base.prefix}register_raqw\` ➣ Set channel as r/AQW Feed.
                     > \`${this.base.prefix}unregister_raqw\` ➣ Removes r/AQW Feed registry.
-                    > \`${this.base.prefix}register_daily\` ➣ Set channel as Daily Gift Feed.
+                    > \`${this.base.prefix}register_daily role_id\` ➣ Set channel as Daily Gift Feed.
                     > \`${this.base.prefix}unregister_daily\` ➣ Removes Daily Gift Feed registry.
                     `)
             embed.addField("Useful Links: ", `[AuQW.tk](https://auqw.tk/) | [Class Tiers](${this.base.files["resources"]["links"]["classTiers"]}) | [Class Performance Excel](${this.base.files["resources"]["links"]["vanilleStats"]}) | [Wikidot](http://aqwwiki.wikidot.com/)`)
