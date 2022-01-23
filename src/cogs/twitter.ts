@@ -182,6 +182,7 @@ export default class TwitterCog {
     }
 
     private async processTweet(tweet) {
+        if (tweet.user.screen_name.lower() != "alina_ae" ) return
 
         // Get text
         var text: string = ""
@@ -213,6 +214,7 @@ export default class TwitterCog {
         // Get Date
         const date: Date = new Date(parseInt(tweet.timestamp_ms)) 
 
+        console.log(tweet)
         // Create Embed
         var content: string = ""
         const embed: MessageEmbed = new MessageEmbed()
@@ -220,7 +222,8 @@ export default class TwitterCog {
             .setAuthor("AdventureQuest Worlds", this.base.files["resources"]["images"]["aqw_icon"])
             .setURL(url)
             .setImage(image)
-            
+        
+        var got_it: boolean = false
         // Create Content
         if (this.isBoost(target)) { // If Boost
             embed.setTitle("New Daily Boost!")
@@ -245,6 +248,8 @@ export default class TwitterCog {
             if (this.hasValue(boostResult)) {
                 content += `**Boost**: ${boostResult.value?.replace("Hour", "").replace("Hours", "").replace(durationResult.value!, "").trim()}\n`
             } 
+
+            got_it = true
 
         } else if (this.isGift(target)) { // If Gift
             embed.setTitle("New Daily Gift!")
@@ -277,8 +282,10 @@ export default class TwitterCog {
                 content += `**Item**: ${itemResult.value}\n`
             }
             console.log("what")
+            got_it = true
            
         }
+        if (!got_it) return
 
         embed.setDescription(content)
 
@@ -288,7 +295,7 @@ export default class TwitterCog {
 
             try {
                 if (this.base.dailyChannels[channelID].hasOwnProperty('role') && this.base.dailyChannels[channelID].role != "") {
-                    await loginChannel.send({ content: `\n<@&${this.base.dailyChannels[channelID].role}>` })
+                    // await loginChannel.send({ content: `\n<@&${this.base.dailyChannels[channelID].role}>` })
                 }
                 await loginChannel.send({ embeds: [embed] })
             } catch (error) {
