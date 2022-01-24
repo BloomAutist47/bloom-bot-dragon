@@ -33,18 +33,15 @@ baseCog.readData()
 // Commands
 client.on("ready", () => {
     // Platform & Slash Command Setup
-    console.log(process.platform)
-    baseCog.commands = client.application?.commands
-    baseCog.prefix = ";"
 
-    // if (process.platform == "win32") {
-    //     baseCog.commands = client.guilds.cache.get("761956630606250005")!.commands
-    //     baseCog.prefix = "'"
-    // } else {
-    //     console.log("Heroku")
-    //     baseCog.commands = client.application?.commands
-    //     baseCog.prefix = ";"
-    // }
+    if (process.platform == "win32") {
+        baseCog.commands = client.guilds.cache.get("761956630606250005")!.commands
+        baseCog.prefix = "'"
+    } else {
+        console.log("[System] Heroku")
+        baseCog.commands = client.application?.commands
+        baseCog.prefix = ";"
+    }
 
     
     // Cogs
