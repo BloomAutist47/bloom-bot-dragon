@@ -64,7 +64,7 @@ export default class GeneralCog {
         const embed = new MessageEmbed()
             .setColor(this.base.color)
             .setTitle("Bloom Bot Help")
-            .setDescription(`**Prefix**: \` ${this.base.prefix} \` or \` / \`\n** Bloom Bot**: [Invitation Link](${this.base.files["resources"]["links"]["botInvite"]})\n**Support Server**: [Discord](${this.base.files["resources"]["links"]["supportServer"]})`)
+            .setDescription(`**Prefix**: \` ${this.base.prefix} \` or \` / \`\n** Bloom Bot**: [Invitation Link](${this.base.files["resources"]["links"]["botInvite"]})\n**Support Server**: [Discord](${this.base.files["resources"]["links"]["supportServer"]})\n**Github**: [Source Code](${this.base.files["resources"]["links"]["github"]})`)
             .setThumbnail(this.base.files["resources"]["icon"])
  
             embed.addField("Commands:", `> \`${this.base.prefix}help\` ➣ Shows all Bloom commands.
