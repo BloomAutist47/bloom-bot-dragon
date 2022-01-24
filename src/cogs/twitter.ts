@@ -288,7 +288,7 @@ export default class TwitterCog {
         }
         if (!got_it) return
         
-        // const subExists = await this.base.database.dbRead(`logger.twitter`, { _id: subObj.id }, true)
+        // const subExists = await this.base.database.dbRead(`logger.others`, { _id: "twitter" }, true)
         // if (subExists) return
 
         embed.setDescription(content)
