@@ -14,7 +14,8 @@
         "vanilleStats": "https://docs.google.com/spreadsheets/d/1NFMrFxF5YuPudwfxTlbyOBwqAvSO3owQtjk7DQ53d4g/edit#gid=0",
         "classTiers": "https://docs.google.com/spreadsheets/d/1Ywl9GcfySXodGA_MtqU4YMEQaGmr4eMAozrM4r00KwI/edit?usp=sharing",
         "botInvite": "https://discord.com/api/oauth2/authorize?client_id=799639690176495637&permissions=268749888&scope=bot",
-        "supportServer": "https://discord.gg/YcXzxPt593"
+        "supportServer": "https://discord.gg/YcXzxPt593",
+        "github": "https://github.com/BloomAutist47/bloom-bot-dragon/"
     },
     "images": {
         "server": "https://media.discordapp.net/attachments/805367955923533845/813412831651168266/beleen-youve-got-mail-new-adventure-quest-worlds-aqw-newsletter.png",
