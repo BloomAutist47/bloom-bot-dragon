@@ -13,7 +13,7 @@
     "links": {
         "vanilleStats": "https://docs.google.com/spreadsheets/d/1NFMrFxF5YuPudwfxTlbyOBwqAvSO3owQtjk7DQ53d4g/edit#gid=0",
         "classTiers": "https://docs.google.com/spreadsheets/d/1Ywl9GcfySXodGA_MtqU4YMEQaGmr4eMAozrM4r00KwI/edit?usp=sharing",
-        "botInvite": "https://discord.com/api/oauth2/authorize?client_id=799639690176495637&permissions=268749888&scope=bot",
+        "botInvite": "https://discord.com/api/oauth2/authorize?client_id=799639690176495637&permissions=2416298048&scope=applications.commands%20bot",
         "supportServer": "https://discord.gg/YcXzxPt593",
         "github": "https://github.com/BloomAutist47/bloom-bot-dragon/"
     },
