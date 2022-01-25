@@ -59,7 +59,14 @@ client.on("ready", () => {
     // Start
     baseCog.delay(2000);
     console.log(`[System] Logged in as ${client.user!.tag}.`)
-    const loginChannel = client.channels.cache.get('830702959679373352') as TextChannel
+
+    var loginChannelID: string = "830702959679373352"
+    if (process.platform == "win32") {
+        // If testing, use test channel for logins
+        loginChannelID = "799238286539227136"
+    }
+    
+    const loginChannel = client.channels.cache.get(loginChannelID) as TextChannel
     const date = new Date(Date.now()).toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' })
 
     loginChannel.send(`**Deployed**: Bloom-${process.env.mode} | \`${date}\``)
