@@ -11,11 +11,6 @@ export default class PrivateCog {
     constructor(private client: Client, private base: BaseCog) {
         this.files = base.files
 
-        this.base.registerCommand(this.ping.bind(this), {
-            name: 'ping',
-            description: 'test command',
-            ephemeral: true,
-        })
 
         client.on('interactionCreate', async interaction => {
             if (!interaction.isCommand()) return;
@@ -196,8 +191,6 @@ export default class PrivateCog {
 
     }
 
-    async ping(mode: string, source) {
 
-    }
 
 }
