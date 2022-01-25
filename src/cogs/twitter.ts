@@ -176,15 +176,22 @@ export default class TwitterCog {
         // Tweet Listener
         this.twitter.on('tweet', this.processTweet.bind(this))
 
-        // Bloom -> 1349290524901998592
-        // Alina -> 16480141
-        this.twitter.follow('16480141')
+        // Follow Twitter
+        if (process.platform == "win32") {
+            // Bloom 
+            this.twitter.follow('1349290524901998592')
+        } else {
+            // Alina
+            this.twitter.follow('16480141')
+        }        
     }
 
     private async processTweet(tweet) {
 
         // Check if Alina
-        if (tweet.user.screen_name.toLowerCase() != "alina_ae" ) return
+        if (!(process.platform == "win32")) {
+            if (tweet.user.screen_name.toLowerCase() != "alina_ae" ) return
+        }
 
         // Get text
         var text: string = ""
@@ -215,7 +222,6 @@ export default class TwitterCog {
         // Get Date
         const date: Date = new Date(parseInt(tweet.timestamp_ms)) 
 
-        console.log(tweet)
         // Create Embed
         var content: string = ""
         const embed: MessageEmbed = new MessageEmbed()
@@ -254,6 +260,7 @@ export default class TwitterCog {
 
         } else if (this.isGift(target)) { // If Gift
             embed.setTitle("New Daily Gift!")
+            var count: number = 1
             const locationResult: DailyResult = this.findLocation(target)!
             const itemResult: DailyResult = this.findItem(target)
             const enemyResult: DailyResult = this.findEnemy(target)
@@ -262,9 +269,11 @@ export default class TwitterCog {
             
             if (this.hasValue(enemyResult)) {
                 content += `**Enemy**: [${enemyResult.value}](${this.wikiLinkifier(enemyResult.value!)})\n`
+                count += 1
             }
             if (this.hasValue(npcResult)) {
                 content += `**NPC**: ${npcResult.value}\n`
+                count += 1
             }
             if (this.hasValue(questResult)) {
                 if (locationResult.type !== "quest") {
@@ -273,19 +282,26 @@ export default class TwitterCog {
                     } 
                 }
                 content += `**Quest**: ${questResult.value}\n`
+                count += 1
             } else {
                 if (this.hasValue(locationResult)) {
                     content = `**${this.capitalize(locationResult.type)}**: ${locationResult.value}\n` + content
+                    count += 1
                 } 
             }
             content += `**Date**: ${this.getDate(date)}\n`
             if (this.hasValue(itemResult)) {
                 content += `**Item**: ${itemResult.value}\n`
+                count += 1
             }
-            console.log("what")
-            got_it = true
-           
+            // Check if real
+            if (count >= 3) {
+                got_it = true
+            } else {
+                console.log("[Twitter] HA! Almost got me")
+            }
         }
+
         if (!got_it) return
         
         // const subExists = await this.base.database.dbRead(`logger.others`, { _id: "twitter" }, true)
@@ -293,11 +309,16 @@ export default class TwitterCog {
 
         embed.setDescription(content)
 
-
-
         // Send to Channel
+        // If testing
+        if (process.platform == "win32") {
+            const loginChannel = await this.client.channels.cache.get('934675518320697415') as TextChannel
+            await loginChannel.send({ embeds: [embed] })
+            return
+        }
+        // If Deployed
         for (const channelID in this.base.dailyChannels) {
-            let loginChannel = await this.client.channels.cache.get(this.base.dailyChannels[channelID].channel) as TextChannel
+            const loginChannel = await this.client.channels.cache.get(this.base.dailyChannels[channelID].channel) as TextChannel
 
             try {
                 if (this.base.dailyChannels[channelID].hasOwnProperty('role') && this.base.dailyChannels[channelID].role != "") {
@@ -396,16 +417,18 @@ export default class TwitterCog {
         }
 
         // Return
-        if (!location_raw.startsWith("/")) {
-            location_raw = "/" + location_raw
-        }
+        const location_final = location_raw.replace(/[^\w\s]/gi, '')
 
-        return { type: "map", value: location_raw }
+        if (location_final == "") {
+            return { type: "map", value: null }
+        }
+        
+        return { type: "map", value: "/" + location_final }
     }
 
     private findItem(str: string) {
         const target = str
-        var result = target.match(/(to get seasonal | to get this seasonal | collect all |to collect| to find our|to find the|find the|to find|find her|find her|for a chance to get the|for a chance to get our|for a chance to get|0 AC|this seasonal|to get the|a host of)(.*?)((\!)|(\.)|(\!|in your|dropping from his|dropping in|as we celebrate| available now |as we head into|in the|in her|in his shop|in her shop|as we lead up|until|in your))/)
+        var result = target.match(/(to get seasonal | to get this seasonal | collect all |to collect| to find our|to find the|find the|to find|find her|find her|for a chance to get the|for a chance to get our|for a chance to get|0 AC|this seasonal|to get the|a host of|Our\s)(.*?)((\!)|(\.)|(\!|in your|dropping from his|dropping in|as we celebrate| available now |as we head into|in the|in her|in his shop|in her shop|as we lead up|until|in your| gear and ))/)
         if (result == null || result[2] == undefined) {
             result = target.match(/(pieces of the |to collect all |find the full|\sfor\s|one of the new|to find)(.*?)(\.|\!|available|\,|in his shop)/)
 
