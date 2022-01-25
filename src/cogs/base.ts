@@ -68,8 +68,6 @@ export default class BaseCog {
     }    
 
     public async createListener() {
-        // Start Database
-        // await this.database.start()
 
         // Create Discord Listeners
         this.client.on('interactionCreate', async (interaction) => {
