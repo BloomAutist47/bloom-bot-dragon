@@ -322,7 +322,7 @@ export default class TwitterCog {
 
             try {
                 if (this.base.dailyChannels[channelID].hasOwnProperty('role') && this.base.dailyChannels[channelID].role != "") {
-                    // await loginChannel.send({ content: `\n<@&${this.base.dailyChannels[channelID].role}>` })
+                    await loginChannel.send({ content: `\n<@&${this.base.dailyChannels[channelID].role}>` })
                 }
                 await loginChannel.send({ embeds: [embed] })
             } catch (error) {
