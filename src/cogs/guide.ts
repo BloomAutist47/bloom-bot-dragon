@@ -93,11 +93,16 @@ export default class GuideCog {
         embed = new MessageEmbed()
             .setColor(this.base.color)
             .setTitle('Guide Commands')
-            .setDescription('To summon this list, use `g`.\n To know all Bloom Bot commands, use `bhelp`.\n\u200b')
+            .setDescription(`To summon this list, use \`${this.base.prefix}g\`.\n To know all Bloom Bot commands, use \`${this.base.prefix}help\`.\n\u200b`)
 
         let text: string = ""
         for (const [key, value] of Object.entries(this.files["guides"])) {
             if (this.files["guides"][key] == "header") {
+                if (key === "Skill Guides") {
+                    embed.addField(key, `${text}`)
+                    text = ""
+                    continue
+                }
                 embed.addField(key, `${text}\u200b`)
                 text = ""
                 continue
