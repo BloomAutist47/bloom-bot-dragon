@@ -21,7 +21,7 @@ export default class BaseCog {
     // Class Variables
     public files = {}
     public dTypes = Constants.ApplicationCommandOptionTypes
-    public prefix = "'"
+    public prefix = "\'"
     public color: ColorResolvable = '#44FC75'
 
     public database = new DataBase(this);
@@ -94,10 +94,22 @@ export default class BaseCog {
         })
 
         this.client.on("messageCreate", async msg => {
-            let prefix = msg.content.trim().split(" ")[0].replace(this.prefix, "").trim()
-            if (!(prefix in this.commandList)) return
+            
+            const splitted_msg: Array<string> = msg.content.trim().split(" ")
+            // Check prefix
+            const prefix_text: string = splitted_msg[0].trim()
+            // Return if not prefixed
+            if (!prefix_text.startsWith(this.prefix)) return
+
+            // Check Command Name
+            let cName = splitted_msg[0].replace(this.prefix, "").trim()
+            console.log("Command: ", cName)
+            // Return if not
+            if (!this.commandList.hasOwnProperty(cName)) return
+            
+            
             try {
-                await this.commandList[prefix].func("legacy", msg, this.commandList[prefix].defered)
+                await this.commandList[cName].func("legacy", msg, this.commandList[cName].defered)
             } catch (err) {
                 await msg.reply(`${err}`)
             }
