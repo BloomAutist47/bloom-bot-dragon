@@ -31,7 +31,7 @@ export default class PrivateCog {
 
             if (interaction.isSelectMenu()) {
                 if (interaction.customId === 'select') {
-
+                    await interaction.deferReply({ephemeral: true});
                     // Get User Role IDs
                     var userRoles: Array<string> = []
                     await interaction.guild!.roles.cache.forEach(r => {
@@ -53,13 +53,14 @@ export default class PrivateCog {
                     await member.roles.add(selected_role)
 
                     // Reply
-                    await interaction.reply({ ephemeral: true, content: `Role updated! <@&${this.files["auqw"]["color_roles"][interaction.values[0]]["id"]}>` });
+                    await interaction.editReply({ content: `Role updated! <@&${this.files["auqw"]["color_roles"][interaction.values[0]]["id"]}>` });
                 }
                 return
             }
 
             if (interaction.isButton()) {
                 if (interaction.customId === "color_button_auqw") {
+                    
                     const embed = new MessageEmbed()
                         .setColor("#ff3b59")
                         .setTitle("Pick a Role")
@@ -77,6 +78,7 @@ export default class PrivateCog {
                         );
 
                     await interaction.reply({ ephemeral: true, embeds: [embed], components: [selectionRow] })
+                    return
                 }
             }
 
@@ -86,6 +88,8 @@ export default class PrivateCog {
     }
 
     async cmdColorRoleEmbed(mode: string, source) {
+        
+
         const embed = new MessageEmbed()
             .setColor("#ff3b59")
             .setTitle("Color Roles")
