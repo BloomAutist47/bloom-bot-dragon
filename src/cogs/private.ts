@@ -68,7 +68,7 @@ export default class PrivateCog {
                 if (interaction.customId === "color_button_auqw") {
                     
                     const embed = new MessageEmbed()
-                        .setColor("#ff3b59")
+                        .setColor(this.base.color)
                         .setTitle("Pick a Color Role")
                         .setAuthor(this.base.files["resources"]["auths"]["auqw"]["author"], this.base.files["resources"]["auths"]["auqw"]["image"])
                         .setDescription("Click on the Select menu to choose a color role for you.")
@@ -151,10 +151,10 @@ export default class PrivateCog {
 
         // Color Embed
         const colorEmbed = new MessageEmbed()
-            .setColor("#ff3b59")
+            .setColor(this.base.color)
             .setTitle("Color Roles")
             // .setAuthor(this.base.files["resources"]["auths"]["auqw"]["author"], this.base.files["resources"]["auths"]["auqw"]["image"])
-            .setDescription("To choose a role, click the Red Button below!.")
+            .setDescription("To choose a role, click the Green Button below!.")
 
         var text: string = ""
         let count: number = 0
@@ -175,39 +175,39 @@ export default class PrivateCog {
                 new MessageButton()
                     .setCustomId('color_button_auqw')
                     .setLabel('Open Role Selection')
-                    .setStyle('DANGER'),
+                    .setStyle('SUCCESS'),
             );
 
         // Ping Embed
         const pingEmbed = new MessageEmbed()
-            .setColor("#ff3b59")
+            .setColor(this.base.color)
             .setTitle("**Ping Roles**")
             // .setAuthor("AutoQuest Worlds", this.base.files["resources"]["auths"]["auqw"]["image"])
-            .setDescription(`**Description**: Get Pinged when during certain events. To Remove this role, just click the role buttons again.
+            .setDescription(`Get Pinged during certain events.\nTo Remove these roles, just click the role buttons again.
 
-               <:TyNpAp:812605163994742815> <@&811305081063604290> - Alina's Daily Gift/Boost at <#812318143322128384> Channel!
-               ⛵ <@&811305081063604291> - New boats are made by our Staff at <#811305082002866235>.​`)
+                **Roles**: 
+               <:TyNpAp:812605163994742815> <@&811305081063604290> - Alina's AQW Daily Gift/Boost!
+               ⛵ <@&811305081063604291> - New boats are made by our Staff.​`)
         const pingMessageRow = new MessageActionRow()
             .addComponents(
                 new MessageButton()
                     .setCustomId('auqw_ping_daily')
                     .setLabel('Get Daily')
-                    .setStyle('DANGER'),
+                    .setStyle('SUCCESS'),
                 new MessageButton()
                     .setCustomId('auqw_ping_boat')
                     .setLabel('Get Boat Notif')
-                    .setStyle('DANGER'),
+                    .setStyle('SUCCESS'),
             );
                
 
 
         // War Embed
         const warEmbed = new MessageEmbed()
-            .setColor("#ff3b59")
+            .setColor(this.base.color)
             .setTitle("**War Roles**")
             // .setAuthor("AutoQuest Worlds", this.base.files["resources"]["auths"]["auqw"]["image"])
-            .setDescription(`**Description**:
-                These roles can only be obtained from a Server Staff with __screenshot proof__ of your army (4+ Alts).
+            .setDescription(`These roles are given by a Server Staff.\nTo get them, Submit a Screenshot Proof of your army (4+ Alts).
 
                 **Possible Roles**:
                 <@&811305081063604289> - Have 4+ Level 100 alts with decent support classes.
@@ -221,7 +221,7 @@ export default class PrivateCog {
         
         // Bot Maker Role
         const botEmbed = new MessageEmbed()
-            .setColor("#ff3b59")
+            .setColor(this.base.color)
             .setTitle("**Bot Maker Role**")
             // .setAuthor("AutoQuest Worlds", this.base.files["resources"]["auths"]["auqw"]["image"])
             .setDescription(`
@@ -256,10 +256,11 @@ export default class PrivateCog {
 
 
         const contentEmbed = new MessageEmbed()
-            .setColor("#ff3b59")
+            .setColor(this.base.color)
             .setTitle("**Table of Content**")
             .setAuthor("AutoQuest Worlds", this.base.files["resources"]["auths"]["auqw"]["image"])
             .setDescription(tocTexts)
+            .setImage("https://cdn.discordapp.com/attachments/805367955923533845/935859089563611139/roles.png")
 
         await source.channel.send({ content: "\n​", embeds: [contentEmbed] })
     }
