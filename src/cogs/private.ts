@@ -190,9 +190,9 @@ export default class PrivateCog {
             // .setAuthor("AutoQuest Worlds", this.base.files["resources"]["auths"]["auqw"]["image"])
             .setDescription('These roles are given by a Server Staff.\nTo get them, DM a Staff.\n\n' +
                 '**Possible Roles**:\n' +
-                '<@&811305081109872640> - If we see you help others a lot, we\'ll give you the Helper role!.\n' +
-                '<@&831241705801777183> - Help the AQW Wiki and/or its team by contributing.\n' +
-                '<@&878659308282347551> - Be a Verified AQW Wikidot editor\n\n' +
+                '<@&811305081109872640> - If we see you help others a lot in this server, we\'ll give you the Helper role!.\n' +
+                '<@&831241705801777183> - Assist editors and contribute valuable information to the AQW Wiki (stuff like fixing typos doesn\'t count).\n' +
+                '<@&878659308282347551> - Be an Official [AQW Wiki Editor](http://aqwwiki.wikidot.com/) (apply in the [official wiki discord](https://discord.gg/stMbcMr) after editing the wiki for 30+ days)\n\n' +
 
                 '<@&911300565890388039> - Verified AQW Whale.\n' +
                 '<@&828984723085852715> - Share us your Artwork and be a verified Artist!\n')
@@ -292,7 +292,7 @@ export default class PrivateCog {
         // Table of Contents
         const contentEmbed = new MessageEmbed()
             .setColor(this.base.color)
-            .setTitle("**Table of Contents**")
+            .setTitle("**Role Lists**")
             .setAuthor("AutoQuest Worlds", this.base.files["resources"]["auths"]["auqw"]["image"])
             .setDescription(tocTexts)
             .setImage("https://cdn.discordapp.com/attachments/805367955923533845/935859089563611139/roles.png")
