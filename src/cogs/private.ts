@@ -19,6 +19,12 @@ export default class PrivateCog {
     private colorArray: Array<colorObj> = []
     private colorIDArray: Array<string> = []
 
+    private auqwButtonsIDs: Object = {
+        "terraria_button_auqw": "927267048558592030",
+        "auqw_ping_daily": "811305081063604290", 
+        "auqw_ping_boat": "811305081063604291"
+    }
+
     constructor(private client: Client, private base: BaseCog) {
         this.files = base.files
         this.getColors()
@@ -87,17 +93,13 @@ export default class PrivateCog {
                     return
                 }
                 
-                if (interaction.customId === "auqw_ping_daily" || interaction.customId === "auqw_ping_boat") {
+                
+                if (this.auqwButtonsIDs.hasOwnProperty(interaction.customId)) {
                     await interaction.deferReply({ ephemeral: true });
 
                     // Setup Role ID
-                    var roleID: string = ""
-                    if (interaction.customId === "auqw_ping_daily") {
-                        roleID = "811305081063604290"
-                    } else if (interaction.customId === "auqw_ping_boat") {
-                        roleID = "811305081063604291"
-                    }
-                    
+                    var roleID: string = this.auqwButtonsIDs[interaction.customId]
+
                     const member: GuildMember = interaction.member as GuildMember
 
                     var alreadyHasRole: boolean = false
@@ -165,6 +167,23 @@ export default class PrivateCog {
 
 
         // Misc Embed
+        const channelEmbed = new MessageEmbed()
+            .setColor(this.base.color)
+            .setTitle("**Channel Roles**")
+            // .setAuthor("AutoQuest Worlds", this.base.files["resources"]["auths"]["auqw"]["image"])
+            .setDescription('These roles opens a channel\n\n' +
+                '**Possible Roles**:\n' +
+                '<@&927267048558592030> - Open the Terraria Chat.\n')
+        const channelMessageRow = new MessageActionRow()
+            .addComponents(
+                new MessageButton()
+                    .setCustomId('terraria_button_auqw')
+                    .setLabel('Open Terraria')
+                    .setStyle('SUCCESS'),
+            );
+
+
+        // Misc Embed
         const miscEmbed = new MessageEmbed()
             .setColor(this.base.color)
             .setTitle("**Misc Roles**")
@@ -176,8 +195,7 @@ export default class PrivateCog {
                 '<@&878659308282347551> - Be a Verified AQW Wikidot editor\n\n' +
 
                 '<@&911300565890388039> - Verified AQW Whale.\n' +
-                '<@&828984723085852715> - Share us your Artwork and be a verified Artist!\n' +
-                '<@&927267048558592030> - Open the Terraria Chat.\n')
+                '<@&828984723085852715> - Share us your Artwork and be a verified Artist!\n')
 
 
         // War Embed
@@ -249,12 +267,13 @@ export default class PrivateCog {
             );
 
 
-
+        
         // Sending Embeds
         var tocTexts: string = ""
         var tocCount: number = 1
         const embeds: Array<Object> = [
             { name: "Bot Maker Role", content: "\n​", embeds: [botEmbed] },
+            { name: "Channel Roles", content: "\n​", embeds: [channelEmbed], components: [channelMessageRow] },
             { name: "Misc Roles", content: "\n​", embeds: [miscEmbed] },
             { name: "War Roles", content: "\n​", embeds: [warEmbed] },
             { name: "Ping Roles", content: "\n​", embeds: [pingEmbed], components: [pingMessageRow] },
