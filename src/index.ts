@@ -63,7 +63,8 @@ client.on("ready", () => {
     var loginChannelID: string = "830702959679373352"
     if (process.platform == "win32") {
         // If testing, use test channel for logins
-        loginChannelID = "799238286539227136"
+        loginChannelID = "799238286539227136" // Bloom Factory
+        loginChannelID = "890563660278280222" // AuQW
     }
     
     const loginChannel = client.channels.cache.get(loginChannelID) as TextChannel
