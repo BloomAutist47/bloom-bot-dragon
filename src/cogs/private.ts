@@ -1,6 +1,8 @@
 import { Client, MessageEmbed, MessageActionRow, MessageSelectMenu, RoleResolvable, MessageButton, GuildMember } from "discord.js"
 import BaseCog from './base'
 
+// This script is exclusive to AuQW Pearl Harbor discord server only
+
 interface colorObj {
     label: string;
     description: string;
