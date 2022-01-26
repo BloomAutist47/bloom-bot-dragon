@@ -149,34 +149,52 @@ export default class PrivateCog {
 
     async cmdServerRoles(mode: string, source) {
 
-        // Color Embed
-        const colorEmbed = new MessageEmbed()
+
+        // Bot Maker Role
+        const botEmbed = new MessageEmbed()
             .setColor(this.base.color)
-            .setTitle("Color Roles")
-            // .setAuthor(this.base.files["resources"]["auths"]["auqw"]["author"], this.base.files["resources"]["auths"]["auqw"]["image"])
-            .setDescription("To choose a role, click the Green Button below!.")
+            .setTitle("**Bot Maker Role**")
+            // .setAuthor("AutoQuest Worlds", this.base.files["resources"]["auths"]["auqw"]["image"])
+            .setDescription('**Roles**:\n<@&928630244859052062> (Normal)\n<@&836018846905008148> (Godlike)\n\n' + 
+                '**Privilige**: Ability to upload bots to the [Portal](https://auqw.tk/), hidden (autistic) channels, and early access to Bot Clients during Development.\n\n' +
+                '**How to get**:\n' +
+                '1. Join [Pearl Harbor: Prototype](https://discord.gg/9hdNDf9msa) Server\n' +
+                '2. Read the #Welcome Channel, Create a ticket\n' +
+                '3. Ping a Ruler/Boat Maker/Helper/Staff to review your boat.\n\n' +
+                '**DISCLAIMER**: "Kill for : X " and "Kill X" are not High Quality Bots')
 
-        var text: string = ""
-        let count: number = 0
-        for (const color of this.colorArray) {
-            count += 1
-            if (count == 11) {
-                colorEmbed.addField("Colors", text, true)
-                text = ""; continue
-            }
-            text += `${color.emoji} - <@&${this.files["auqw"]["color_roles"][color.value]["id"]}>\n`
 
-        }
-        colorEmbed.addField('\u200b', '\u200b', true)
-        colorEmbed.addField('\u200b', text, true)
+        // Misc Embed
+        const miscEmbed = new MessageEmbed()
+            .setColor(this.base.color)
+            .setTitle("**Misc Roles**")
+            // .setAuthor("AutoQuest Worlds", this.base.files["resources"]["auths"]["auqw"]["image"])
+            .setDescription('These roles are given by a Server Staff.\nTo get them, DM a Staff.\n\n' +
+                '**Possible Roles**:\n' +
+                '<@&811305081109872640> - If we see you help others a lot, we\'ll give you the Helper role!.\n' +
+                '<@&831241705801777183> - Help the AQW Wiki and/or its team by contributing.\n' +
+                '<@&878659308282347551> - Be a Verified AQW Wikidot editor\n\n' +
 
-        const colorMessageRow = new MessageActionRow()
-            .addComponents(
-                new MessageButton()
-                    .setCustomId('color_button_auqw')
-                    .setLabel('Open Role Selection')
-                    .setStyle('SUCCESS'),
-            );
+                '<@&911300565890388039> - Verified AQW Whale.\n' +
+                '<@&828984723085852715> - Share us your Artwork and be a verified Artist!\n' +
+                '<@&927267048558592030> - Open the Terraria Chat.\n')
+
+
+        // War Embed
+        const warEmbed = new MessageEmbed()
+            .setColor(this.base.color)
+            .setTitle("**War Roles**")
+            // .setAuthor("AutoQuest Worlds", this.base.files["resources"]["auths"]["auqw"]["image"])
+            .setDescription('These roles are given by a Server Staff.\nTo get them, Submit a Screenshot Proof of your army (4+ Alts).\n\n' +
+                            '**Possible Roles**:\n' +
+                            '<@&811305081063604289> - Have 4+ Level 100 alts with decent support classes.\n' +
+                            '<@&870304318115438592> - Have 4+ Hollowborn Reaper\'s Scythe.\n' +
+                            '<@&872139453588717659> - Have 4+ banned accounts.\n' +
+                            '<@&873643637043527830> - Have 4+ VHLs (not IoDA).\n' +
+                            '<@&873643701971325008> - Have 4+ LRs (not IoDA).\n' +
+                            '<@&813793980453879818> - Have 4+ Necrotic Sword of Doom.\n' +
+                            '<@&867365483597791232> - Have the Exalted Apotheosis on 4+\n' +
+                            '<@&872211457276772422> - Have a fucking pimped out army of 10+ accs.')
 
         // Ping Embed
         const pingEmbed = new MessageEmbed()
@@ -201,53 +219,50 @@ export default class PrivateCog {
             );
                
 
-
-        // War Embed
-        const warEmbed = new MessageEmbed()
+        // Color Embed
+        const colorEmbed = new MessageEmbed()
             .setColor(this.base.color)
-            .setTitle("**War Roles**")
-            // .setAuthor("AutoQuest Worlds", this.base.files["resources"]["auths"]["auqw"]["image"])
-            .setDescription(`These roles are given by a Server Staff.\nTo get them, Submit a Screenshot Proof of your army (4+ Alts).
+            .setTitle("Color Roles")
+            // .setAuthor(this.base.files["resources"]["auths"]["auqw"]["author"], this.base.files["resources"]["auths"]["auqw"]["image"])
+            .setDescription("To choose a role, click the Green Button below!.")
 
-                **Possible Roles**:
-                <@&811305081063604289> - Have 4+ Level 100 alts with decent support classes.
-                <@&870304318115438592> - Have 4+ Hollowborn Reaper's Scythe.
-                <@&872139453588717659> - Have 4+ banned accounts.
-                <@&873643637043527830> - Have 4+ VHLs (not IoDA).
-                <@&873643701971325008> - Have 4+ LRs (not IoDA).
-                <@&813793980453879818> - Have 4+ Necrotic Sword of Doom.
-                <@&867365483597791232> - Have the Exalted Apotheosis on 4+
-                <@&872211457276772422> - Have a fucking pimped out army of 10+ accs.`)
-        
-        // Bot Maker Role
-        const botEmbed = new MessageEmbed()
-            .setColor(this.base.color)
-            .setTitle("**Bot Maker Role**")
-            // .setAuthor("AutoQuest Worlds", this.base.files["resources"]["auths"]["auqw"]["image"])
-            .setDescription(`
-            **Role**: <@&928630244859052062>
+        var text: string = ""
+        let count: number = 0
+        for (const color of this.colorArray) {
+            count += 1
+            if (count == 11) {
+                colorEmbed.addField("Colors", text, true)
+                text = ""; continue
+            }
+            text += `${color.emoji} - <@&${this.files["auqw"]["color_roles"][color.value]["id"]}>\n`
 
-            **Privilige**: Ability to upload bots to the [Portal](https://auqw.tk/), hidden (autistic) channels, and early access to Bot Clients during Development.
-            
-            **How to get**: 
-            1. Join [Pearl Harbor: Prototype](https://discord.gg/9hdNDf9msa) Server
-            2. Read the <#848945955147350046> Channel, Create a ticket
-            3. Ping a Ruler/Boat Maker/Helper/Staff to review your boat.
+        }
+        // colorEmbed.addField('\u200b', '\u200b', true)
+        colorEmbed.addField('\u200b', text, true)
 
-            **DISCLAIMER**: "Kill for : X " and "Kill X" are not High Quality Bots
-            `)
-        
+        const colorMessageRow = new MessageActionRow()
+            .addComponents(
+                new MessageButton()
+                    .setCustomId('color_button_auqw')
+                    .setLabel('Open Role Selection')
+                    .setStyle('SUCCESS'),
+            );
+
+
+
+        // Sending Embeds
         var tocTexts: string = ""
         var tocCount: number = 1
         const embeds: Array<Object> = [
             { name: "Bot Maker Role", content: "\n​", embeds: [botEmbed] },
+            { name: "Misc Roles", content: "\n​", embeds: [miscEmbed] },
             { name: "War Roles", content: "\n​", embeds: [warEmbed] },
             { name: "Ping Roles", content: "\n​", embeds: [pingEmbed], components: [pingMessageRow] },
             { name: "Color Roles", content: "\n​", embeds: [colorEmbed], components: [colorMessageRow] },
         ]
-
-        for (let embed of embeds) {
-            tocTexts += `${tocCount}. [${embed["name"]}](`
+        
+        for (let embed of embeds) {miscEmbed
+            tocTexts += `• [${embed["name"]}](`
             delete embed["name"]
             let embedRes = await source.channel.send(embed)
             tocTexts += `${embedRes.url.trim()})\n`
@@ -255,13 +270,14 @@ export default class PrivateCog {
         }
 
 
+        // Table of Contents
         const contentEmbed = new MessageEmbed()
             .setColor(this.base.color)
-            .setTitle("**Table of Content**")
+            .setTitle("**Table of Contents**")
             .setAuthor("AutoQuest Worlds", this.base.files["resources"]["auths"]["auqw"]["image"])
             .setDescription(tocTexts)
             .setImage("https://cdn.discordapp.com/attachments/805367955923533845/935859089563611139/roles.png")
-
+        // Send
         await source.channel.send({ content: "\n​", embeds: [contentEmbed] })
     }
 
