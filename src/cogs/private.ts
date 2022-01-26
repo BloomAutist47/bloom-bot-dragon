@@ -113,6 +113,7 @@ export default class PrivateCog {
             text += `${color.emoji} - <@&${this.files["auqw"]["color_roles"][color.value]["id"]}>\n`
 
         }
+        embed.addField('\u200b', '\u200b', true)
         embed.addField('\u200b', text, true)
 
         const messageRow = new MessageActionRow()
