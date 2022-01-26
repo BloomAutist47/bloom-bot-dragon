@@ -1,4 +1,4 @@
-import { Client, MessageEmbed, MessageActionRow, MessageSelectMenu, RoleResolvable, MessageButton } from "discord.js"
+import { Client, MessageEmbed, MessageActionRow, MessageSelectMenu, RoleResolvable, MessageButton, GuildMember } from "discord.js"
 import BaseCog from './base'
 
 interface colorObj {
@@ -15,7 +15,7 @@ export default class PrivateCog {
     // Class Variables
     private files = {}
     private colorArray: Array<colorObj> = []
-    private roleArray: Array<string> = []
+    private colorIDArray: Array<string> = []
 
     constructor(private client: Client, private base: BaseCog) {
         this.files = base.files
@@ -32,28 +32,32 @@ export default class PrivateCog {
             if (interaction.isSelectMenu()) {
                 if (interaction.customId === 'select') {
                     await interaction.deferReply({ephemeral: true});
-                    // Get User Role IDs
-                    var userRoles: Array<string> = []
-                    await interaction.guild!.roles.cache.forEach(r => {
-                        if (this.roleArray.includes(r.id)) {
-                            userRoles.push(r.id)
+                    const targetColorID: string = this.files["auqw"]["color_roles"][interaction.values[0]]["id"]
+                    const member: GuildMember = interaction.member as GuildMember
+                    
+                    var alreadyHasRole: boolean = false
+
+                    for (const roleID of member['_roles']) {
+                        if (roleID === targetColorID) {
+                            alreadyHasRole = true
+                            continue
                         }
-                    });
-
-                    // Get Member
-                    const member = await interaction.guild!.members.fetch(interaction.user.id)
-
-                    // Remove Previous Color Role
-                    for (const id of userRoles) {
-                        await member.roles.remove(id)
+                        if (this.colorIDArray.includes(roleID)) {
+                            await member.roles.remove(roleID)
+                        }
                     }
 
-                    // Add Selected Color Role
-                    const selected_role = await interaction.guild!.roles.fetch(this.files["auqw"]["color_roles"][interaction.values[0]]["id"]) as RoleResolvable
+                    // // Add Selected Color Role
+                    if (alreadyHasRole) {
+                        await interaction.editReply({ content: `<@${interaction.user.id}> You __already have__ this role: <@&${targetColorID}>` });
+                        return
+                    }
+
+                    const selected_role: RoleResolvable = await interaction.guild!.roles.fetch(targetColorID) as RoleResolvable
                     await member.roles.add(selected_role)
 
-                    // Reply
-                    await interaction.editReply({ content: `Role updated! <@&${this.files["auqw"]["color_roles"][interaction.values[0]]["id"]}>` });
+                    // // Reply
+                    await interaction.editReply({ content: `<@${interaction.user.id}> Color role updated!: <@&${targetColorID}>` });
                 }
                 return
             }
@@ -63,7 +67,7 @@ export default class PrivateCog {
                     
                     const embed = new MessageEmbed()
                         .setColor("#ff3b59")
-                        .setTitle("Pick a Role")
+                        .setTitle("Pick a Color Role")
                         .setAuthor(this.base.files["resources"]["auths"]["auqw"]["author"], this.base.files["resources"]["auths"]["auqw"]["image"])
                         .setDescription("Click on the Select menu to choose a color role for you.")
 
@@ -129,7 +133,7 @@ export default class PrivateCog {
                 value: color["value"],
                 emoji: color["emoji"]
             })
-            this.roleArray.push(color["id"])
+            this.colorIDArray.push(color["id"])
         }
     }
 
