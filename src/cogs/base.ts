@@ -14,6 +14,13 @@ class DInteraction {
     }
 }
 
+interface slashCommand {
+    func: Function; 
+    data: Object;
+    defered?: boolean;
+    exclusive?: boolean;
+}
+
 export default class BaseCog {
     // Class Metadata
     public description = "The Base Class with common methods shared by all cogs"
@@ -62,9 +69,11 @@ export default class BaseCog {
 
     }
 
-    public async registerCommand(func: Function, slashData: any, defered: boolean=false) {
-        this.commands?.create(slashData)
-        this.commandList[slashData.name] = {func: func, data: slashData, defered: defered}
+    public async registerCommand(func: Function, slashData: any, defered: boolean=false, exclusive: boolean=false) {
+        if (exclusive == false) {
+            this.commands?.create(slashData)
+        }
+        this.commandList[slashData.name] = {func: func, data: slashData, defered: defered, exclusive: exclusive}
     }    
 
     public async createListener() {
@@ -74,8 +83,8 @@ export default class BaseCog {
             if (!interaction.isCommand()) return
 
             const prefix = interaction.commandName
-            if (!(prefix in this.commandList)) return
-            
+            if (!this.commandList.hasOwnProperty(prefix)) return
+
             if (this.commandList[prefix].defered) {
                 await interaction.deferReply();
             }
@@ -93,6 +102,7 @@ export default class BaseCog {
 
         this.client.on("messageCreate", async msg => {
             
+            
             const splitted_msg: Array<string> = msg.content.trim().split(" ")
             // Check prefix
             const prefix_text: string = splitted_msg[0].trim()
@@ -105,6 +115,12 @@ export default class BaseCog {
             // Return if not
             if (!this.commandList.hasOwnProperty(cName)) return
             
+            if (this.commandList[cName].exclusive === true) {
+                if (msg.member!.id !== "252363724894109700") {
+                    console.log("[Command]: Nope")
+                    return
+                }
+            }
             
             try {
                 await this.commandList[cName].func("legacy", msg, this.commandList[cName].defered)
