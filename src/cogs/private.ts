@@ -219,11 +219,11 @@ export default class PrivateCog {
             .setColor(this.base.color)
             .setTitle("**Ping Roles**")
             // .setAuthor("AutoQuest Worlds", this.base.files["resources"]["auths"]["auqw"]["image"])
-            .setDescription(`Get Pinged during certain events.\nTo Remove these roles, just click the role buttons again.
-
-                **Roles**: 
-               <:TyNpAp:812605163994742815> <@&811305081063604290> - Alina's AQW Daily Gift/Boost!
-               ⛵ <@&811305081063604291> - New boats are made by our Staff.​`)
+            .setDescription('Get Pinged during certain events.\n' + 
+                'To Remove these roles, just click the role buttons again.\n\n' +
+                '**Roles**:' + 
+                '<:TyNpAp:812605163994742815> <@&811305081063604290> - Alina\'s AQW Daily Gift/Boost!' +
+                '⛵ <@&811305081063604291> - New boats are made by our Staff.​')
         const pingMessageRow = new MessageActionRow()
             .addComponents(
                 new MessageButton()
