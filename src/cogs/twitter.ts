@@ -253,7 +253,7 @@ export default class TwitterCog {
             }
 
             if (this.hasValue(boostResult)) {
-                content += `**Boost**: ${boostResult.value?.replace("Hour", "").replace("Hours", "").replace(durationResult.value!, "").trim()}\n`
+                content += `**Boost**: ${boostResult.value?.replace("Hour", "").replace("Hours", "").replace(durationResult.value!+"+", "").replace(durationResult.value!, "").trim()}\n`
             } 
 
             got_it = true
