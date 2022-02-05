@@ -428,7 +428,7 @@ export default class TwitterCog {
 
     private findItem(str: string) {
         const target = str
-        var result = target.match(/(to get seasonal | to get this seasonal | collect all |to collect| to find our|to find the|find the|to find|find her|find her|for a chance to get the|for a chance to get our|for a chance to get|0 AC|this seasonal|to get the|a host of|Our\s)(.*?)((\!)|(\.)|(\!|in your|dropping from his|dropping in|as we celebrate| available now |as we head into|in the|in her|in his shop|in her shop|as we lead up|until|in your| gear and ))/)
+        var result = target.match(/(to get seasonal | to get this seasonal | to get his |collect all |to collect| to find our|to find the|find the|to find|find her|find her|for a chance to get the|for a chance to get our|for a chance to get|0 AC|this seasonal|to get the|a host of|Our\s)(.*?)((\!)|(\.)|(\!|in your|dropping from his|dropping in|as we celebrate| available now |as we head into|in the|in her|in his shop|in her shop|as we lead up|until|in your| gear and ))/)
         if (result == null || result[2] == undefined) {
             result = target.match(/(pieces of the |to collect all |find the full|\sfor\s|one of the new|to find)(.*?)(\.|\!|available|\,|in his shop)/)
 
