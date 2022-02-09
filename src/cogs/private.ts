@@ -151,6 +151,10 @@ export default class PrivateCog {
 
     async cmdServerRoles(mode: string, source) {
 
+        if (source.author.id != this.files["resources"]["bloom-id"]) {
+            await source.reply("You're not bloom.")
+            return
+        }
 
         // Bot Maker Role
         const botEmbed = new MessageEmbed()
