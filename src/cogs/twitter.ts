@@ -216,8 +216,9 @@ export default class TwitterCog {
             } catch (error) {
                 console.log("[Twitter] Failed to get media: ", error)
             }
-            
         }
+
+        if (image === "") return
 
         // Get Date
         const date: Date = new Date(parseInt(tweet.timestamp_ms)) 
