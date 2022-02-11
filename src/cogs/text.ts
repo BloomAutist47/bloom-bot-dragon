@@ -1,5 +1,7 @@
-import { Client, MessageEmbed, Constants, TextChannel } from "discord.js"
+import { Client, MessageAttachment } from "discord.js"
 import BaseCog from './base'
+import fs from 'fs'
+
 
 export default class TextCog {
     // Class Metadata
@@ -43,7 +45,8 @@ export default class TextCog {
         }
         
         // Process text for sending
-        const texts = (await this.base.getWebData(url)).split("\n")
+        const data = await this.base.getWebData(url)
+        const texts = data.split("\n")
         let textList: Array<string> = []
         let textRaw: string = ""
         for (const text of texts) {
@@ -67,9 +70,8 @@ export default class TextCog {
 
         console.log("[Text]: Done Uploading")
             
-
-            
-
+        const attachment = new MessageAttachment(Buffer.from(data, 'utf-8'), 'QuestIDs.txt')
+        await channel.send({files: [attachment]})
 
         
     }
