@@ -10,7 +10,7 @@ import AQWCog from './cogs/aqw'
 import PrivateCog from './cogs/private'
 import RedditCog from './cogs/reddit'
 import TwitterCog from './cogs/twitter'
-// import TextCog from './cogs/text'
+import TextCog from './cogs/text'
 
 process.env.UV_THREADPOOL_SIZE = '128';
 dotenv.config()
@@ -54,9 +54,9 @@ client.on("ready", () => {
     new RedditCog(client, baseCog)
     new TwitterCog(client, baseCog)
 
-    
+    // AuQW Specific Functionalities
     new PrivateCog(client, baseCog)
-    // new TextCog(client, baseCog)
+    new TextCog(client, baseCog)
 
     baseCog.createListener()
 
@@ -68,7 +68,6 @@ client.on("ready", () => {
     if (process.platform == "win32") {
         // If testing, use test channel for logins
         loginChannelID = "799238286539227136" // Bloom Factory
-        loginChannelID = "838377515252842496" // Bloom Factory Channel 2
         // loginChannelID = "890563660278280222" // AuQW
     }
     
