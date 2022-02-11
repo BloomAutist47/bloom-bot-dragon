@@ -395,7 +395,6 @@ export default class AQWCog {
                     // Timeout error check
                     let errorCheck = $(".error-block").text().trim()
                     if (errorCheck) {
-                        console.log("Nigger joe time out error")
                         tryCount += 1
                         continue
                     }
@@ -438,7 +437,30 @@ export default class AQWCog {
         }
     }
 
+    // async cmdIODA(mode, source, defered=false) {
+    //     let args: string = ""
 
+    //     // Args check
+    //     switch (mode) {
+    //         case "slash":
+    //             let { options } = source
+    //             args = options.getString("character_name").trim()
+    //             break
+    //         case "legacy":
+    //             args = source.content.replace(`${this.base.prefix}char`, "").trim()
+    //             if (args.length == 0) {
+    //                 let embed = await this.invalidEntry()
+    //                 await this.base.reply({ embeds: [embed] }, source, defered)
+    //                 return
+    //             }
+    //             break;
+    //     }
+
+    //     const playerURL: string = "https://account.aq.com/CharPage?id=" + args.replace(/ /g, "+")
+
+
+        
+    // }
 
     /*==============================================================================================================
                                                                                                        
@@ -749,8 +771,6 @@ export default class AQWCog {
             .setDescription(message)
     }
 
-
-
     async getWikiIndex() {
         const res = await this.base.getWebsite("https://raw.githubusercontent.com/DarkFireKiller/darkfirekiller.github.io/master/wiki/locs.js", 3, false) as AxiosResponse
         const data = res.data.replace("var locIndex = {\n", "").replace("\n};", "").trim().split(",")
@@ -767,5 +787,7 @@ export default class AQWCog {
         // console.log(this.wikiIndex)
     }
 
+
+    
 
 }
