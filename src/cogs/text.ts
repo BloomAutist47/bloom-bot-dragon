@@ -38,8 +38,8 @@ export default class TextCog {
         
         // Check if ,txt
         const url = source.attachments.first().url
-
-        if (url.split("/").at(-1).split(".").at(-1) !== "txt") {
+        const filename = url.split("/").at(-1)
+        if (filename.split(".").at(-1) !== "txt") {
             await source.reply("Only .txt files")
             return 
         }
@@ -70,7 +70,7 @@ export default class TextCog {
 
         console.log("[Text]: Done Uploading")
             
-        const attachment = new MessageAttachment(Buffer.from(data, 'utf-8'), 'QuestIDs.txt')
+        const attachment = new MessageAttachment(Buffer.from(data, 'utf-8'), filename)
         await channel.send({files: [attachment]})
 
         
