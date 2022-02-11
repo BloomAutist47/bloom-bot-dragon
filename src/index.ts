@@ -10,7 +10,7 @@ import AQWCog from './cogs/aqw'
 import PrivateCog from './cogs/private'
 import RedditCog from './cogs/reddit'
 import TwitterCog from './cogs/twitter'
-import TextCog from './cogs/text'
+// import TextCog from './cogs/text'
 
 process.env.UV_THREADPOOL_SIZE = '128';
 dotenv.config()
