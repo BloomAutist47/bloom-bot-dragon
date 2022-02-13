@@ -4,6 +4,5 @@ clean_slash.js
 .vscode/
 package-lock.json
 node_modules/
-build/cogs/
-build/index.js
+build/*
 test/
