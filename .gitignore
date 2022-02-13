@@ -1,8 +1,8 @@
 clean_slash.js
 .env
-.unotes/
-.vscode/
+.unotes/*
+.vscode/*
 package-lock.json
-node_modules/
+node_modules/*
 build/*
-test/
+test/*
