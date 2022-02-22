@@ -200,7 +200,7 @@ export default class TwitterCog {
     }
 
     private async sendToNewsChannel(url) {
-        const tweetNewsChannel = await this.client.channels.cache.get('934675518320697415') as TextChannel
+        const tweetNewsChannel = await this.client.channels.cache.get('811309992727937034') as TextChannel
         tweetNewsChannel.send({content: url})
         return
     }
@@ -210,7 +210,7 @@ export default class TwitterCog {
         // Get URL
         const url = "https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str
 
-        // Check if Alina
+        // Check if Alina or Yoshino
         if (!(process.platform == "win32")) {
             if (tweet.user.screen_name.toLowerCase() != "alina_ae" || tweet.user.screen_name.toLowerCase() != "yoshinoae" ) {
                 this.sendToNewsChannel(url)
