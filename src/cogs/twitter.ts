@@ -179,18 +179,43 @@ export default class TwitterCog {
         // Follow Twitter
         if (process.platform == "win32") {
             // Bloom 
-            this.twitter.follow('1349290524901998592')
+            this.twitter.follow('1349290524901998592', '16480141')
         } else {
             // Alina
-            this.twitter.follow('16480141')
+            this.twitter.follow('16480141', // Alina_AE
+                                '2596905068', // Yoshino_AE
+
+                                "135864340", // Kotaro_AE
+                                "200782641", // notdarkon
+                                "2435624982", // asukaae 
+                                "2615674874", // yo_lae
+                                "989324890204327936", // arletteaqw
+                                "1240767852321390592", // aqwclass
+                                "2150245009", // CaptRhubarb
+                                "17190195", // ArtixKrieger
+                                "885653716942172161", // AQW_News_Reddit
+                                "897656067458576384", // Aelious_AE
+                                )
         }        
+    }
+
+    private async sendToNewsChannel(url) {
+        const tweetNewsChannel = await this.client.channels.cache.get('934675518320697415') as TextChannel
+        tweetNewsChannel.send({content: url})
+        return
     }
 
     private async processTweet(tweet) {
 
+        // Get URL
+        const url = "https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str
+
         // Check if Alina
         if (!(process.platform == "win32")) {
-            if (tweet.user.screen_name.toLowerCase() != "alina_ae" ) return
+            if (tweet.user.screen_name.toLowerCase() != "alina_ae" || tweet.user.screen_name.toLowerCase() != "yoshinoae" ) {
+                this.sendToNewsChannel(url)
+                return
+            }
         }
 
         // Get text
@@ -203,10 +228,12 @@ export default class TwitterCog {
 
         // Get String
         const target: string = text.toLowerCase().trim().replace("log in each day for a new reward, boost, or gift at ", " ")
-        if (this.isBlackListed(target)) return
+        if (this.isBlackListed(target)) {
+            this.sendToNewsChannel(url)
+            return
+        }
 
-        // Get URL
-        const url = "https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str
+
 
         // Get Image
         var image: string = ""
@@ -218,7 +245,10 @@ export default class TwitterCog {
             }
         }
 
-        if (image === "") return
+        if (image === "") {
+            this.sendToNewsChannel(url)
+            return
+        }
 
         // Get Date
         const date: Date = new Date(parseInt(tweet.timestamp_ms)) 
@@ -303,7 +333,10 @@ export default class TwitterCog {
             }
         }
 
-        if (!got_it) return
+        if (!got_it) {
+            this.sendToNewsChannel(url)
+            return
+        }
         
         // const subExists = await this.base.database.dbRead(`logger.others`, { _id: "twitter" }, true)
         // if (subExists) return
