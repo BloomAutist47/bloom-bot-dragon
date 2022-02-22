@@ -184,7 +184,7 @@ export default class TwitterCog {
             // Alina
             this.twitter.follow('16480141', // Alina_AE
                                 '2596905068', // Yoshino_AE
-
+                                '1349290524901998592', // Bloom
                                 "135864340", // Kotaro_AE
                                 "200782641", // notdarkon
                                 "2435624982", // asukaae 
