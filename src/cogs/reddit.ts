@@ -208,11 +208,11 @@ export default class RedditCog {
         const embed = new MessageEmbed()
             .setColor(this.base.color)
             
-            .setAuthor(`r/${subreddit}`, this.base.files["resources"]["reddit"][subreddit])
+            .setAuthor({name: `r/${subreddit}`, iconURL: this.base.files["resources"]["reddit"][subreddit]})
             .setThumbnail(thumbnail)
             .setURL(link)
             .setImage(image)
-            .setFooter(note)
+            .setFooter({text: note})
             .addFields(
                 { name: "Author:", value: `[u/${author}](https://www.reddit.com/user/${author}/)`, inline: true },
                 { name: 'Date:', value: date, inline: true }

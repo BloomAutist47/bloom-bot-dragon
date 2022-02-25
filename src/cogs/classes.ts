@@ -121,7 +121,7 @@ export default class ClassCog {
             .setColor(this.base.color)
             .setTitle("Class Legends")
             .setImage(this.base.files["resources"]["images"]["legends"])
-            .setAuthor(this.base.files["resources"]["auths"]["aqw"]["author"], this.base.files["resources"]["auths"]["aqw"]["image"])
+            .setAuthor({name: this.base.files["resources"]["auths"]["aqw"]["author"], iconURL: this.base.files["resources"]["auths"]["aqw"]["image"]})
             .setDescription(`Thanks to Shiminuki and Molevolent for\nthe [Class Tier List](https://docs.google.com/spreadsheets/d/1Ywl9GcfySXodGA_MtqU4YMEQaGmr4eMAozrM4r00KwI/edit?usp=sharing) and to the AuQW!\nUse \`${this.base.prefix}credits\` to see their Links`)
         await this.base.reply({ embeds: [embed] }, source, defered)
     }
@@ -145,8 +145,8 @@ export default class ClassCog {
             .setTitle(`${className}`)
             .setURL(this.files[className]["wiki"])
             .setImage(this.files[className]["discord_url"])
-            .setAuthor(this.base.files["resources"]["auths"]["aqw"]["author"], this.base.files["resources"]["auths"]["aqw"]["image"])
-            .setFooter("Use [  ;legends  ] and  [  ;credits  ]")
+            .setAuthor({name: this.base.files["resources"]["auths"]["aqw"]["author"], iconURL: this.base.files["resources"]["auths"]["aqw"]["image"]})
+            .setFooter({text: "Use [  ;legends  ] and  [  ;credits  ]"})
         
         // Add duplicates
         if ("duplicates" in this.files[className] && this.files[className]["duplicates"].length != 0) {

@@ -51,7 +51,7 @@ export default class GeneralCog {
         const embed = new MessageEmbed()
             .setColor(this.base.color)
             // .setTitle("Bloom Bot")
-            .setAuthor("A Discord Bot Made by Bloom Autist#4713")
+            .setAuthor({name: "A Discord Bot Made by Bloom Autist#4713"})
             .setThumbnail(this.base.files["resources"]["icon"])
             // .setURL(this.base.files["resources"]["links"]["botInvite"])
             .setDescription(`**Bloom Bot**: [Invitation Link](${this.base.files["resources"]["links"]["botInvite"]})\n**Support Server**: [Discord](${this.base.files["resources"]["links"]["supportServer"]})`)
@@ -95,7 +95,7 @@ export default class GeneralCog {
         const embed = new MessageEmbed()
             .setColor(this.base.color)
             // .setTitle("Credits")
-            .setAuthor("Bloom Bot Credits", this.base.files["resources"]["icon"])
+            .setAuthor({name: "Bloom Bot Credits", iconURL: this.base.files["resources"]["icon"]})
             .setDescription(`Bloom Bot and Class Charts made by Bloom Autist.
                             Thanks to [Shiminuki](https://www.youtube.com/channel/UCyQ5AocDVVDznIslRuGUS3g) and [Molevolent](https://twitter.com/molevolent) for creating the [Class Tier List](https://docs.google.com/spreadsheets/d/1Ywl9GcfySXodGA_MtqU4YMEQaGmr4eMAozrM4r00KwI/edit?usp=sharing).
                             Lastly, thanks to Satan, Shane and to the [AutoQuest Worlds Community](https://auqw.tk/)!`)
@@ -128,7 +128,7 @@ export default class GeneralCog {
         // Embed
         const embed = new MessageEmbed()
             .setColor(this.base.color)
-            .setAuthor(`Bloom Bot`, this.base.files["resources"]["icon"])
+            .setAuthor({name: `Bloom Bot`, iconURL: this.base.files["resources"]["icon"]})
             .setTitle("Registered Feed Channels")
         if (content !== "") {
             embed.setDescription(content)

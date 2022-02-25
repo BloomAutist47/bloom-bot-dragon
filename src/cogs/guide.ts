@@ -187,7 +187,7 @@ export default class GuideCog {
         // Author Check
         if ("auth" in gItem) {
             let auths = this.base.files["resources"]["auths"]
-            embed.setAuthor(auths[gItem["auth"]]["author"], auths[gItem["auth"]]["image"])
+            embed.setAuthor({name: auths[gItem["auth"]]["author"], iconURL: auths[gItem["auth"]]["image"]})
         }
 
         // Description Check

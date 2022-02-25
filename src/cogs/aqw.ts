@@ -124,7 +124,7 @@ export default class AQWCog {
                     .setTitle(args.replace(/\_\_/, "\\\_\_"))
                     .setURL(playerURL)
                     .setColor(this.base.color)
-                    .setAuthor("Character Profile")
+                    .setAuthor({name: "Character Profile"})
                     .setDescription(`Character not found.`)
                     .setThumbnail(this.base.files["resources"]["images"]["not_found"])
                 await this.base.reply({ embeds: [embed] }, source, defered)
@@ -152,7 +152,7 @@ export default class AQWCog {
                 .setTitle(playerName.replace(/\_\_/, "\\\_\_"))
                 .setURL(playerURL)
                 .setColor(this.base.color)
-                .setAuthor("Character Profile")
+                .setAuthor({name: "Character Profile"})
                 .setDescription(`${warn}`)
                 .setThumbnail(this.base.files["resources"]["images"]["lock"])
             await this.base.reply({ embeds: [embed] }, source, defered)
@@ -208,7 +208,7 @@ export default class AQWCog {
             .setTitle(playerName.replace(/\_\_/, "\\\_\_"))
             .setURL(playerURL)
             .setColor(this.base.color)
-            .setAuthor("Character Profile")
+            .setAuthor({name: "Character Profile"})
             .setThumbnail(this.base.files["resources"]["images"]["aqw_icon_long"])
 
         // Only shows non-empty infos
@@ -411,7 +411,7 @@ export default class AQWCog {
 
                     const embed = new MessageEmbed()
                         .setColor(this.base.color)
-                        .setAuthor(`AQW Wiki Search`, this.base.files["resources"]["images"]["aqw_icon"])
+                        .setAuthor({name: `AQW Wiki Search`, iconURL: this.base.files["resources"]["images"]["aqw_icon"]})
                         .setTitle("Found Results")
                         .setURL(URLWiki)
 
@@ -641,7 +641,7 @@ export default class AQWCog {
         if (this.INVALIDWIKIPAGE.includes(pageType)) {
             const embed = new MessageEmbed()
                 .setColor(this.base.color)
-                .setAuthor(`AQW Wiki Search`, this.base.files["resources"]["images"]["aqw_icon"])
+                .setAuthor({name: `AQW Wiki Search`, iconURL: this.base.files["resources"]["images"]["aqw_icon"]})
                 .setTitle("Invalid Search")
                 .setURL(URL)
                 .setDescription(`Wiki Page of \`${pageType}\` type is not allowed in this bot.`)
@@ -703,10 +703,10 @@ export default class AQWCog {
         const embed = new MessageEmbed()
             .setColor(this.base.color)
             // .setAuthor(`AQW Wiki Search - ${breadcrumbs.join(" » ")}`, this.base.files["resources"]["images"]["aqw_icon"])
-            .setAuthor(`AQW Wiki Search`, this.base.files["resources"]["images"]["aqw_icon"])
+            .setAuthor({name: `AQW Wiki Search`, iconURL: this.base.files["resources"]["images"]["aqw_icon"]})
             .setTitle(embedTitle)
             .setURL(URL)
-            .setFooter(Object.keys(tags).join(" | "))
+            .setFooter({text: Object.keys(tags).join(" | ")})
             .setImage(image)
 
         console.log(textObject)
@@ -765,7 +765,7 @@ export default class AQWCog {
     wikiNoResult(URLWiki: string, message: string = "Nope. Try a different one.") {
         return new MessageEmbed()
             .setColor(this.base.color)
-            .setAuthor(`AQW Wiki Search`, this.base.files["resources"]["images"]["aqw_icon"])
+            .setAuthor({name: `AQW Wiki Search`, iconURL: this.base.files["resources"]["images"]["aqw_icon"]})
             .setTitle("No Result")
             .setURL(URLWiki)
             .setDescription(message)
