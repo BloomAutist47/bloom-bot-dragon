@@ -26,6 +26,9 @@ export default class TwitterCog {
     private boost_check: Array<string> = []
     private black_list: Array<string> = []
 
+    private followed_user_names: Array<string> = []
+    private followed_user_ids: Array<string> = []
+
     private boostReplaceList: Array<BoostReplace> = [
         { target: "(rep) ", replace: "" },
         { target: "(exp) ", replace: "" },
@@ -38,6 +41,11 @@ export default class TwitterCog {
         this.gift_check = base.files["resources"]["twitter"]["gift_check"]
         this.boost_check = base.files["resources"]["twitter"]["boost_check"]
         this.black_list = base.files["resources"]["twitter"]["black_list"]
+
+        for (const user in base.files["resources"]["twitter"]["followed_users"]) {
+            this.followed_user_names.push(user.toLowerCase().trim())
+            this.followed_user_ids.push(base.files["resources"]["twitter"]["followed_users"][user])
+        }
 
         this.base.registerCommand(this.cmdRegisterChannel.bind(this), {
             name: 'register_daily',
@@ -179,28 +187,34 @@ export default class TwitterCog {
         // Follow Twitter
         if (process.platform == "win32") {
             // Bloom 
-            this.twitter.follow('1349290524901998592', '16480141')
+            this.twitter.follow('1349290524901998592')
         } else {
             // Alina
-            this.twitter.follow('16480141', // Alina_AE
-                                '2596905068', // Yoshino_AE
-                                '1349290524901998592', // Bloom
-                                "135864340", // Kotaro_AE
-                                "200782641", // notdarkon
-                                "2435624982", // asukaae 
-                                "2615674874", // yo_lae
-                                "989324890204327936", // arletteaqw
-                                "1240767852321390592", // aqwclass
-                                "2150245009", // CaptRhubarb
-                                "17190195", // ArtixKrieger
-                                "885653716942172161", // AQW_News_Reddit
-                                "897656067458576384", // Aelious_AE
-                                )
+            this.twitter.follow(this.followed_user_ids)
         }        
     }
 
-    private async sendToNewsChannel(url) {
-        const tweetNewsChannel = await this.client.channels.cache.get('811309992727937034') as TextChannel
+    // '16480141', // Alina_AE
+    // '2596905068', // Yoshino_AE
+    // '1349290524901998592', // Bloom
+    // "135864340", // Kotaro_AE
+    // "200782641", // notdarkon
+    // "2435624982", // asukaae 
+    // "2615674874", // yo_lae
+    // "989324890204327936", // arletteaqw
+    // "1240767852321390592", // aqwclass
+    // "2150245009", // CaptRhubarb
+    // "17190195", // ArtixKrieger
+    // "885653716942172161", // AQW_News_Reddit
+    // "897656067458576384", // Aelious_AE
+
+    private async sendToNewsChannel(url: string, name: string) {
+        if (!this.followed_user_names.includes(name)) return
+        let channelID: string = '811309992727937034' // AuQW
+        if (process.platform == "win32") {
+            channelID = '934675518320697415' // Bloom Factory
+        }
+        const tweetNewsChannel = await this.client.channels.cache.get(channelID) as TextChannel
         tweetNewsChannel.send({content: url})
         return
     }
@@ -208,12 +222,13 @@ export default class TwitterCog {
     private async processTweet(tweet) {
 
         // Get URL
-        const url = "https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str
+        const url = "https://twitter.com/twitter/statuses/" + tweet.id_str
+        const username = tweet.user.screen_name.toLowerCase().trim()
 
         // Check if Alina or Yoshino
         if (!(process.platform == "win32")) {
-            if (tweet.user.screen_name.toLowerCase() != "alina_ae" || tweet.user.screen_name.toLowerCase() != "yoshinoae" ) {
-                this.sendToNewsChannel(url)
+            if (username != "alina_ae" || username != "yoshinoae" ) {
+                this.sendToNewsChannel(url, username)
                 return
             }
         }
@@ -229,7 +244,8 @@ export default class TwitterCog {
         // Get String
         const target: string = text.toLowerCase().trim().replace("log in each day for a new reward, boost, or gift at ", " ")
         if (this.isBlackListed(target)) {
-            this.sendToNewsChannel(url)
+            this.sendToNewsChannel(url, username)
+            console.log("THIS what black")
             return
         }
 
@@ -246,7 +262,8 @@ export default class TwitterCog {
         }
 
         if (image === "") {
-            this.sendToNewsChannel(url)
+            this.sendToNewsChannel(url, username)
+            console.log("IMAGE")
             return
         }
 
@@ -257,7 +274,7 @@ export default class TwitterCog {
         var content: string = ""
         const embed: MessageEmbed = new MessageEmbed()
             .setColor(this.base.color)
-            .setAuthor("AdventureQuest Worlds", this.base.files["resources"]["images"]["aqw_icon"])
+            .setAuthor({name: "AdventureQuest Worlds", iconURL: this.base.files["resources"]["images"]["aqw_icon"]})
             .setURL(url)
             .setImage(image)
         
@@ -334,7 +351,8 @@ export default class TwitterCog {
         }
 
         if (!got_it) {
-            this.sendToNewsChannel(url)
+            this.sendToNewsChannel(url, username)
+            console.log("THIS got it area")
             return
         }
         
@@ -348,6 +366,7 @@ export default class TwitterCog {
         if (process.platform == "win32") {
             const loginChannel = await this.client.channels.cache.get('934675518320697415') as TextChannel
             await loginChannel.send({ embeds: [embed] })
+            console.log("THIS send area")
             return
         }
         // If Deployed
@@ -462,7 +481,7 @@ export default class TwitterCog {
 
     private findItem(str: string) {
         const target = str.replace("A New Reward Or bonus At Https://t".toLocaleLowerCase(), "")
-        var result = target.match(/(to get seasonal | to get this seasonal | to get his |collect all |to collect| to find our|to find the|find the|to find|find her|find her|for a chance to get the|for a chance to get our|for a chance to get|0 AC|this seasonal|to get the|to get our|a host of|Our\s)(.*?)((\!)|(\.)|(\!|in your|dropping from his|dropping in|as we celebrate|as we continue|available now |as we head into|in the|in her|in his shop|in her shop|as we lead up|until|in your| gear and ))/)
+        var result = target.match(/(to get seasonal | to get this seasonal | to get our seasonal |to get his |to get|collect all |to collect| to find our|to find the|find the|to find|find her|find her|for a chance to get the|for a chance to get our|for a chance to get|0 AC|this seasonal|to get the|to get our|a host of|Our\s)(.*?)((\!)|(\.)|(\!|in your|dropping from his|dropping in|as we celebrate|as we continue|available now |as we head into|in the|in her|in his shop|in her shop|as we lead up|until|in your| gear and )|(\,))/)
         if (result == null || result[2] == undefined) {
             result = target.match(/(pieces of the |to collect all |find the full|\sfor\s|one of the new|to find)(.*?)(\.|\!|available|\,|in his shop)/)
 
