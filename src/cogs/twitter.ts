@@ -46,7 +46,9 @@ export default class TwitterCog {
             this.followed_user_names.push(user.toLowerCase().trim())
             this.followed_user_ids.push(base.files["resources"]["twitter"]["followed_users"][user])
         }
-        console.log(this.followed_user_names)
+
+
+        
 
         this.base.registerCommand(this.cmdRegisterChannel.bind(this), {
             name: 'register_daily',
@@ -65,7 +67,7 @@ export default class TwitterCog {
         })
 
         this.start()
-
+        
     }
 
 
@@ -226,13 +228,10 @@ export default class TwitterCog {
         const username = tweet.user.screen_name.toLowerCase().trim()
         const url = `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`
         
-
         // Check if Alina or Yoshino
-        if (!(process.platform == "win32")) {
-            if (username != "alina_ae" || username != "yoshinoae" ) {
-                this.sendToNewsChannel(url, username)
-                return
-            }
+        if (!this.base.files["resources"]["twitter"]["daily_gift_users"].includes(username)) {
+            this.sendToNewsChannel(url, username)
+            return
         }
 
         // Get text
