@@ -211,13 +211,24 @@ export default class TwitterCog {
     // "885653716942172161", // AQW_News_Reddit
     // "897656067458576384", // Aelious_AE
 
-    private async sendToNewsChannel(url: string, name: string) {
+
+    private async getChannels() {
+        let channelID: string = '811309992727937034' // AuQW
+        if (process.platform == "win32") {
+            channelID = '934675518320697415' // Bloom Factory
+        }
+        const tweetNewsChannel = await this.client.channels.cache.get(channelID) as TextChannel
+    }
+
+    private async sendToNewsChannel(url: string, name: string, section: string) {
         if (!this.followed_user_names.includes(name)) return
         let channelID: string = '811309992727937034' // AuQW
         if (process.platform == "win32") {
             channelID = '934675518320697415' // Bloom Factory
         }
         const tweetNewsChannel = await this.client.channels.cache.get(channelID) as TextChannel
+        const twitterLogsChannel = await this.client.channels.cache.get('947448707169796188') as TextChannel
+        twitterLogsChannel.send({content: `**Type**: \`${section}\` **Url**: \`${url}\``})
         tweetNewsChannel.send({content: url})
         return
     }
@@ -230,7 +241,7 @@ export default class TwitterCog {
         
         // Check if Alina or Yoshino
         if (!this.base.files["resources"]["twitter"]["daily_gift_users"].includes(username)) {
-            this.sendToNewsChannel(url, username)
+            this.sendToNewsChannel(url, username, "daily gift user check")
             return
         }
 
@@ -245,7 +256,7 @@ export default class TwitterCog {
         // Get String
         const target: string = text.toLowerCase().trim().replace("log in each day for a new reward, boost, or gift at ", " ")
         if (this.isBlackListed(target)) {
-            this.sendToNewsChannel(url, username)
+            this.sendToNewsChannel(url, username, "blacklisted check")
             console.log("THIS what black")
             return
         }
@@ -263,7 +274,7 @@ export default class TwitterCog {
         }
 
         if (image === "") {
-            this.sendToNewsChannel(url, username)
+            this.sendToNewsChannel(url, username, "no image check")
             console.log("IMAGE")
             return
         }
@@ -352,7 +363,7 @@ export default class TwitterCog {
         }
 
         if (!got_it) {
-            this.sendToNewsChannel(url, username)
+            this.sendToNewsChannel(url, username, "didnt got chck")
             console.log("THIS got it area")
             return
         }
@@ -482,7 +493,7 @@ export default class TwitterCog {
 
     private findItem(str: string) {
         const target = str.replace("A New Reward Or bonus At Https://t".toLocaleLowerCase(), "")
-        var result = target.match(/(to get seasonal | to get this seasonal | to get our seasonal |to get his |to get|collect all |to collect| to find our|to find the|find the|to find|find her|find her|for a chance to get the|for a chance to get our|for a chance to get|0 AC|this seasonal|to get the|to get our|a host of|Our\s)(.*?)((\!)|(\.)|(\!|in your|dropping from his|dropping in|as we celebrate|as we continue|available now |as we head into|in the|in her|in his shop|in her shop|as we lead up|until|in your| gear and )|(\,))/)
+        var result = target.match(/(to get seasonal | to get this seasonal | to get our seasonal |to get his |to get|collect all |to collect| to find our|to find the|find the|to find|find her|find her|for a chance to get the|for a chance to get our|for a chance to get|0 AC|this seasonal|as we end our|to get the|to get our|a host of|Our\s)(.*?)((\!)|(\.)|(\!|in your|dropping from his|dropping in|as we celebrate|as we continue|available now |as we head into|in the|in her|in his shop|in her shop|as we lead up|until|in your| gear and )|(\,))/)
         if (result == null || result[2] == undefined) {
             result = target.match(/(pieces of the |to collect all |find the full|\sfor\s|one of the new|to find)(.*?)(\.|\!|available|\,|in his shop)/)
 
