@@ -51,7 +51,7 @@
             "description": "Does your Grimoire or RBot have problems? Browse here and see common fixes.",
             "content": {
                 "📌 Client Not Opening": {
-                    "text": "🔹**Description**: Windows update killed flash player.\n🔹**Solution**: Download and Install the latest [CleanFlash 34.0.0.211](https://drive.google.com/file/d/1_D0sud6Rdr16AX6KAPR2vRgGnpHSUa-t/view?usp=sharing).\n\n**How To Install**\n> 1. Click Agree\n> 2. Check only `ActiveX (OCX)`\n> 3. Uncheck `Install Standalone Player`\n> 4. Click Install\n> 5. Done\n\n**If RBot still won't open**\n> 1. [Download](https://drive.google.com/file/d/1AJWv8kdNgPmxeUIgh2AUntxZPStnrr6g/view?usp=sharing) and Install the Latest `NET Desktop Runtime` and `ASP.NET Core Runtime` from [Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/6.0).\n> 2. Clicking Download above will give you a rar file. We bundled the net requirements for you.",
+                    "text": "🔹**Description**: Windows update killed flash player.\n🔹**Solution**: Download and Install the latest [CleanFlash 34.0.0.211](https://drive.google.com/file/d/1_D0sud6Rdr16AX6KAPR2vRgGnpHSUa-t/view?usp=sharing).\n\n**How To Install**\n> 1. Click Agree\n> 2. Check only `ActiveX (OCX)`\n> 3. Uncheck `Install Standalone Player`\n> 4. Click Install\n> 5. Done",
                     "image": "https://cdn.discordapp.com/attachments/805367955923533845/948565742595477524/lTpiFgwkc5.gif"
                 },
                 "📌 Client Corrupted System files fix": {
@@ -79,7 +79,7 @@
                     "text": "🔹**Description**: You have issues with null references.\n🔹**Solution**: Reinstall Clean flash and only check `ActiveX`."
                 },
                 "📌 [RBot] Does not Open": {
-                    "text": "🔹**Description**: Rbot Not Opening\n🔹**Solution**:\n> 1. Check Windows Defender or your anti-virus software.\n> 2. Open its protection history and see if its quarantining a part of RBot.\n> 3. If so, whitelist it and revert the quarantine. Possibly re-extract RBot too"
+                    "text": "🔹**Description**: Rbot Not Opening. You must be missing NET Requirements. Get the Latest `NET Desktop Runtime` and `ASP.NET Core Runtime` from [Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)\n🔹**Solution**:**Get Requirements**\n> 1. If you're too lazy, download the requirements from [Here](https://drive.google.com/file/d/1AJWv8kdNgPmxeUIgh2AUntxZPStnrr6g/view?usp=sharing) and Install it.\n\n**If RBot still won't open.**\n> 1. Check Windows Defender or your anti-virus software.\n> 2. Open its protection history and see if its quarantining a part of RBot.\n> 3. If so, whitelist it and revert the quarantine. Possibly re-extract RBot too.\n\n"
                 }
 
             }
