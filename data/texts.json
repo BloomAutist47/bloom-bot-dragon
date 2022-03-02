@@ -61,7 +61,7 @@
                     "text": "\n\n🔹**Solution**: \n> 1. Type `%AppData%` on your windows search menu to open `Roaming` Folder.\n> 2. Find the folder `Macromedia` inside Roaming and delete it.\n> 3. Restart your bot client.\n"
                 },
                 "📌 [Grim] Shitty UI fix": {
-                    "text": "🔹**Description**: Grim looks like shit and is randomly changing resolution and size.\n🔹**Solution**: \n\n> 1. Right click Grimoire.exe and click properties.\n> 2. On compatibility, click the \"Change high DPI settings\"\n> 3. Check \"Overide high DPI scaling behavior\" and select \"System (Enhanced)\"\n> 4. Click Ok. Run Grimoire.\n",
+                    "text": "🔹**Description**: Grim looks like shit and is randomly changing resolution and size.\n🔹**Solution**: \n\n> 1. Right click `Grimoire.exe` and click properties.\n> 2. On compatibility, click the `Change high DPI settings`\n> 3. Check `Overide high DPI scaling behavior` and select `System (Enhanced)`\n> 4. Click Ok. Run Grimoire.\n",
                     "image": "https://media.discordapp.net/attachments/805367955923533845/814088319281135616/unknown.png?width=1440&height=527"
                 },
                 "📌 [Grim] Null Username fix": {
