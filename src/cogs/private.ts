@@ -35,6 +35,11 @@ export default class PrivateCog {
             description: 'Send auqw embeds',
         }, false, true)
 
+        this.base.registerCommand(this.cmdServerTemplate.bind(this), {
+            name: 'template',
+            description: 'Send auqw server template',
+        }, false, true)
+
         client.on('interactionCreate', async interaction => {
 
             if (interaction.isSelectMenu()) {
@@ -134,6 +139,10 @@ export default class PrivateCog {
         });
 
 
+    }
+
+    private cmdServerTemplate(mode: string, source) {
+        source.reply(`**Pearl Harbor Server Template**: ${this.base.files["resources"]["auqw"]["template"]}`)
     }
 
     private getColors() {
