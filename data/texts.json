@@ -79,7 +79,7 @@
                     "text": "🔹**Description**: You have issues with null references.\n🔹**Solution**: Reinstall Clean flash and only check `ActiveX`."
                 },
                 "📌 [RBot] Does not Open": {
-                    "text": "🔹**Description**: Rbot Not Opening. You must be missing NET Requirements.\n🔹**Solution**:\n\n**Get Requirements**\nInstall the Latest `NET Desktop Runtime` and `ASP.NET Core Runtime` from [Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) or download all from here [Here](https://drive.google.com/file/d/1AJWv8kdNgPmxeUIgh2AUntxZPStnrr6g/view?usp=sharing).\n\n**If RBot still won't open.**\n> 1. Check Windows Defender or your anti-virus software.\n> 2. Open its protection history and see if its quarantining a part of RBot.\n> 3. If so, whitelist it and revert the quarantine. Possibly re-extract RBot too.\n\n"
+                    "text": "🔹**Description**: Rbot Not Opening. You must be missing NET Requirements.\n🔹**Solution**:\n\n**Get Requirements**\n> Install the Latest `NET Desktop Runtime` and `ASP.NET Core Runtime` from [Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) or download all from here [Here](https://drive.google.com/file/d/1AJWv8kdNgPmxeUIgh2AUntxZPStnrr6g/view?usp=sharing).\n\n**If RBot still won't open.**\n> 1. Check Windows Defender or your anti-virus software.\n> 2. Open its protection history and see if its quarantining a part of RBot.\n> 3. If so, whitelist it and revert the quarantine. Possibly re-extract RBot too.\n\n"
                 }
 
             }
