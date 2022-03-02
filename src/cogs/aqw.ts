@@ -239,29 +239,26 @@ export default class AQWCog {
     }
 
     async cmdServers(mode: string, source, defered: boolean=false) {
-        const $: CheerioAPI = await this.base.getWebsite("https://game.aq.com/game/cf-serverlist.asp") as CheerioAPI
-        if(!$) return
-
-        // Get HTML
-        let serverData = $('servers')
+        const serverResponse = await this.base.getWebData("https://game.aq.com/game/api/data/servers")
 
         // Variables
         let totalPlayers: number = 0
         let servers: Object = {}
         let onlineServerCount: number = 0
         let servText: string = ""
+
         // Parse Data
-        for (let attrib of serverData) {
-            if (attrib.name !== 'servers') continue
-            let serv = attrib.attribs
-            if (serv.bonline == "1") {
-                servers[serv.icount] = `🟢 ${serv.sname}:   **${serv.icount}**\n`
+
+        for (let server of serverResponse) {
+
+            if (server.bOnline == "1") {
+                servers[server.iCount] = `🟢 ${server.sName}:   **${server.iCount}**\n`
                 onlineServerCount += 1
             } else {
-                servers[serv.icount] = `🔴 ${serv.sname}:   **${serv.icount}**\n`
+                servers[server.iCount] = `🔴 ${server.sName}:   **${server.iCount}**\n`
             }
             
-            totalPlayers += parseInt(serv.icount)
+            totalPlayers += server.iCount
         }
         
         // Embed Construction
