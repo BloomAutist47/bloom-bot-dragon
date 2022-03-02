@@ -209,7 +209,6 @@ export default class BaseCog {
         let _rawList: Array<string> = entry.replace(this.prefix, '').split(" ")!
         let result: Array<string> = []
         for (let item of _rawList) {
-            console.log(item)
             result.push(item)
         }
         return result
