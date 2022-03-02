@@ -51,11 +51,11 @@
             "description": "Does your Grimoire or RBot have problems? Browse here and see common fixes.",
             "content": {
                 "📌Client Not Opening": {
-                    "text": "🔹**Description**: Windows update killed flash player.\n🔹**Solution**: Download and Install the latest [CleanFlash 34.0.0.211](https://drive.google.com/file/d/1_D0sud6Rdr16AX6KAPR2vRgGnpHSUa-t/view?usp=sharing).\n\n**How To Install**\n> 1. Click Agree\n> 2. Check only `ActiveX (OCX)`\n> 3. Uncheck `Install Standalone Player`\n> 4. Click Install\n> 5. Done",
+                    "text": "🔹**Description**: Windows update killed flash player.\n🔹**Solution**: Download and Install the latest [CleanFlash 34.0.0.211](https://drive.google.com/file/d/1_D0sud6Rdr16AX6KAPR2vRgGnpHSUa-t/view?usp=sharing).\n\n**How To Install**\n> 1. Click Agree\n> 2. Check only `ActiveX (OCX)`\n> 3. Uncheck `Install Standalone Player`\n> 4. Click Install\n> 5. Done\n\n**If RBot still won't open**\n> [Download](https://drive.google.com/file/d/1AJWv8kdNgPmxeUIgh2AUntxZPStnrr6g/view?usp=sharing) and Install the Latest `NET Desktop Runtime` and `ASP.NET Core Runtime` from [Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/6.0).\n> Clicking Download above will give you a rar file. We bundled the net requirements for you.",
                     "image": "https://cdn.discordapp.com/attachments/805367955923533845/948565742595477524/lTpiFgwkc5.gif"
                 },
                 "📌Client Corrupted System files fix": {
-                    "text": "🔹**Description**: \nDid everything else and nothing worked? Perhaps some system fils are corrupted. Try this.\n\n🔹**Solution**: \n> 1. Open `CMD` in `administrator mode`.\n> 2. Type `sfc /scannow`\n> 3. Wait for it to finish.\n> 4. Once done, **your bot client**, test and see if things are fixed.\n> 4.5 If not **restart your PC** and then open your bot client again.\n"
+                    "text": "🔹**Description**: \nDid everything else and nothing worked? Perhaps some system fils are corrupted. Try this.\n\n🔹**Solution**: \n> 1. Open `CMD` in `administrator mode`.\n> 2. Type `sfc /scannow`\n> 3. Wait for it to finish.\n> 4. Once done, **open your bot client**, test and see if things are fixed.\n> 4.5 If not **restart your PC** and then open your bot client again.\n"
                 },
                 "📌Client Stuck at connecting.": {
                     "text": "\n\n🔹**Solution**: \n> 1. Type `%AppData%` on your windows search menu to open `Roaming` Folder.\n> 2. Find the folder `Macromedia` inside Roaming and delete it.\n> 3. Restart your bot client.\n"
