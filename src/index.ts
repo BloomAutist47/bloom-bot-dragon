@@ -26,7 +26,7 @@ const client = new DiscordJS.Client({
 })
 
 
-var fileList = ["guides", "auqw", "classes", "resources"]
+var fileList = ["guides", "auqw", "classes", "resources", "texts"]
 var baseCog = new BaseCog(client, fileList)
 baseCog.readData()
 
