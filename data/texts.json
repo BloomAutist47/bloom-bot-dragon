@@ -58,7 +58,7 @@
                     "text": "🔹**Description**: \nDid everything else and nothing worked? Perhaps some system fils are corrupted. Try this.\n\n🔹**Solution**: \n> 1. Open `CMD` in `administrator mode`.\n> 2. Type `sfc /scannow`\n> 3. Wait for it to finish.\n> 4. Once done, **your bot client**, test and see if things are fixed.\n> 4.5 If not **restart your PC** and then open your bot client again.\n"
                 },
                 "Client Stuck at connecting.": {
-                    "text": "\n\n🔹**Solution**: \n> 1. Type `%AppData%` on your windows search menu to open `Roaming` Folder.\n> 2. Find the folder `Macromedia` inside Roaming and delete it.\n> 3. Restart Grimoire.\n"
+                    "text": "\n\n🔹**Solution**: \n> 1. Type `%AppData%` on your windows search menu to open `Roaming` Folder.\n> 2. Find the folder `Macromedia` inside Roaming and delete it.\n> 3. Restart your bot client.\n"
                 },
                 "[Grim] Shitty UI fix": {
                     "text": "🔹**Description**: Grim looks like shit and is randomly changing resolution and size.\n🔹**Solution**: \n\n> 1. Right click Grimoire.exe and click properties.\n> 2. On compatibility, click the \"Change high DPI settings\"\n> 3. Check \"Overide high DPI scaling behavior\" and select \"System (Enhanced)\"\n> 4. Click Ok. Run Grimoire.\n",
