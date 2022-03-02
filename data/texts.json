@@ -73,7 +73,7 @@
                     "image": "https://cdn.discordapp.com/attachments/805367955923533845/818003852896501770/unknown.png"
                 },
                 "📌 [Grim] Blocked Fix": {
-                    "text": "🔹**Description**: Your firewall or anti virus might be blocking grimoire.\n🔹**Solution**: Try the followng:\n> \n> 1. Allow the .exe file in firewall by going to Windows Firewall with advanced security. Then add new outbound rule with port 5588, and allow it.\n> \n> 2. Add exception for the grimoire folder in your Antivirus.\n\n> 3. Unblock grimoire by right clicking grimoire.exe -> properties -> click unblock.\n"
+                    "text": "🔹**Description**: Your firewall or anti virus might be blocking grimoire.\n🔹**Solution**: Try the followng:\n\n> 1. Allow the .exe file in firewall by going to Windows Firewall with advanced security. Then add new outbound rule with port 5588, and allow it.\n> \n> 2. Add exception for the grimoire folder in your Antivirus.\n> \n> 3. Unblock grimoire by right clicking grimoire.exe -> properties -> click unblock.\n"
                 },
                 "📌 [RBot] Null Reference Error": {
                     "text": "🔹**Description**: You have issues with null references.\n🔹**Solution**: Reinstall Clean flash and only check `ActiveX`."
