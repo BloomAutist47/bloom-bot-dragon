@@ -50,35 +50,35 @@
             "title": "How to fix Bot Client.",
             "description": "Does your Grimoire or RBot have problems? Browse here and see common fixes.",
             "content": {
-                "📌 Client Not Opening": {
+                "1. Client Not Opening": {
                     "text": "🔹**Description**: Windows update killed flash player.\n🔹**Solution**: Download and Install the latest [CleanFlash 34.0.0.211](https://drive.google.com/file/d/1_D0sud6Rdr16AX6KAPR2vRgGnpHSUa-t/view?usp=sharing).\n\n**How To Install**\n> 1. Click Agree\n> 2. Check only `ActiveX (OCX)`\n> 3. Uncheck `Install Standalone Player`\n> 4. Click Install\n> 5. Done",
                     "image": "https://cdn.discordapp.com/attachments/805367955923533845/948565742595477524/lTpiFgwkc5.gif"
                 },
-                "📌 Client Corrupted System files fix": {
+                "2. Client Corrupted System files fix": {
                     "text": "🔹**Description**: \nDid everything else and nothing worked? Perhaps some system fils are corrupted. Try this.\n\n🔹**Solution**: \n> 1. Open `CMD` in `administrator mode`.\n> 2. Type `sfc /scannow`\n> 3. Wait for it to finish.\n> 4. Once done, **open your bot client**, test and see if things are fixed.\n> 4.5 If not **restart your PC** and then open your bot client again.\n"
                 },
-                "📌 Client Stuck at connecting.": {
+                "3. Client Stuck at connecting.": {
                     "text": "\n\n🔹**Solution**: \n> 1. Type `%AppData%` on your windows search menu to open `Roaming` Folder.\n> 2. Find the folder `Macromedia` inside Roaming and delete it.\n> 3. Restart your bot client.\n"
                 },
-                "📌 [Grim] Shitty UI fix": {
+                "4. (Grim) Shitty UI fix": {
                     "text": "🔹**Description**: Grim looks like shit and is randomly changing resolution and size.\n🔹**Solution**: \n\n> 1. Right click `Grimoire.exe` and click properties.\n> 2. On compatibility, click the `Change high DPI settings`\n> 3. Check `Overide high DPI scaling behavior` and select `System (Enhanced)`\n> 4. Click Ok. Run Grimoire.\n",
                     "image": "https://media.discordapp.net/attachments/805367955923533845/814088319281135616/unknown.png?width=1440&height=527"
                 },
-                "📌 [Grim] Null Username fix": {
-                    "text": "🔹**Description**: This occurs due to opening more than 2 instance of grim and playing using different characters.\n🔹**Solution**: Restart new grim instance twice.",
+                "5. (Grim) Null Username fix": {
+                    "text": "🔹**Description**: This occurs due to opening more than 2 instance of grim and playing using different characters.\n🔹**Solution**: Install the latest [.NET Framework](https://dotnet.microsoft.com/en-us/download/dotnet-framework).",
                     "image": "https://cdn.discordapp.com/attachments/805367955923533845/820872632198627328/unknown.png"
                 },
-                "📌 [Grim] Clear Local Storage": {
+                "6. (Grim) Clear Local Storage": {
                     "text": "🔹**Description**: Try this. Maybe it'll help\n🔹**Solution**:\n> 1. Open grimoire and right click on it.\n> 2. Click on Global Setting.\n> 3. On the Storage tab, click `Delete All`\n> 4. On the Advanced tab, click `Delete All`\n",
                     "image": "https://cdn.discordapp.com/attachments/805367955923533845/818003852896501770/unknown.png"
                 },
-                "📌 [Grim] Blocked Fix": {
-                    "text": "🔹**Description**: Your firewall or anti virus might be blocking grimoire.\n🔹**Solution**: Try the followng:\n\n> 1. Allow the .exe file in firewall by going to Windows Firewall with advanced security. Then add new outbound rule with port 5588, and allow it.\n> \n> 2. Add exception for the grimoire folder in your Antivirus.\n> \n> 3. Unblock grimoire by right clicking grimoire.exe -> properties -> click unblock.\n"
+                "7. (Grim) Blocked Fix": {
+                    "text": "🔹**Description**: Your firewall or anti virus might be blocking grimoire.\n🔹**Solution**:\n\nTry the followng:\n\n> 1. Allow the .exe file in firewall by going to Windows Firewall with advanced security. Then add new outbound rule with port 5588, and allow it.\n> \n> 2. Add exception for the grimoire folder in your Antivirus.\n> \n> 3. Unblock grimoire by right clicking grimoire.exe -> properties -> click unblock.\n"
                 },
-                "📌 [RBot] Null Reference Error": {
+                "8. (RBot) Null Reference Error": {
                     "text": "🔹**Description**: You have issues with null references.\n🔹**Solution**: Reinstall Clean flash and only check `ActiveX`."
                 },
-                "📌 [RBot] Does not Open": {
+                "9. (RBot) Does not Open": {
                     "text": "🔹**Description**: Rbot Not Opening. You must be missing NET Requirements.\n🔹**Solution**:\n\n**Get Requirements**\n> Install the Latest `NET Desktop Runtime` and `ASP.NET Core Runtime` from [Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) or download all from here [Here](https://drive.google.com/file/d/1AJWv8kdNgPmxeUIgh2AUntxZPStnrr6g/view?usp=sharing).\n\n**If RBot still won't open.**\n> 1. Check Windows Defender or your anti-virus software.\n> 2. Open its protection history and see if its quarantining a part of RBot.\n> 3. If so, whitelist it and revert the quarantine. Possibly re-extract RBot too.\n\n"
                 }
 

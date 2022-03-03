@@ -90,13 +90,13 @@ export default class TextCog {
         if (args == "botfix") {
             const botfixLinks: Object = {"Grim":'', "RBot":"", "For Both":""}
             for (const link in links) {
-                if (link.includes("[Grim]")) {
-                    const title = link.replace("[Grim] ", "")
+                if (link.includes("(Grim)")) {
+                    const title = link.replace("(Grim) ", "")
                     botfixLinks["Grim"] += `[${title}](${links[link]})\n`
                     continue
                 }
-                if (link.includes("[RBot]")) {
-                    const title = link.replace("[RBot] ", "")
+                if (link.includes("(RBot)")) {
+                    const title = link.replace("(RBot) ", "")
                     botfixLinks["RBot"] += `[${title}](${links[link]})\n`
                     continue
                 }
