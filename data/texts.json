@@ -51,7 +51,7 @@
             "description": "Does your Grimoire or RBot have problems? Browse here and see common fixes.",
             "content": {
                 "1. Client Not Opening": {
-                    "text": "🔹**Description**: Windows update killed flash player.\n🔹**Solution**: Download and Install the latest [CleanFlash 34.0.0.211](https://drive.google.com/file/d/1_D0sud6Rdr16AX6KAPR2vRgGnpHSUa-t/view?usp=sharing).\n\n**How To Install**\n> 1. Click Agree\n> 2. Check only `ActiveX (OCX)`\n> 3. Uncheck `Install Standalone Player`\n> 4. Click Install\n> 5. Done",
+                    "text": "🔹**Description**: Windows update killed flash player.\n🔹**Solution**: Download and Install the latest [CleanFlash 34.0.0.211](https://drive.google.com/file/d/1_D0sud6Rdr16AX6KAPR2vRgGnpHSUa-t/view?usp=sharing). For RBot, you will also need fix no.8 down below.\n\n**How To Install**\n> 1. Click Agree\n> 2. Check only `ActiveX (OCX)`\n> 3. Uncheck `Install Standalone Player`\n> 4. Click Install\n> 5. Done",
                     "image": "https://cdn.discordapp.com/attachments/805367955923533845/948565742595477524/lTpiFgwkc5.gif"
                 },
                 "2. Client Corrupted System files fix": {
