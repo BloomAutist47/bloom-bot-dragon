@@ -22,7 +22,8 @@ export default class PrivateCog {
     private auqwButtonsIDs: Object = {
         "terraria_button_auqw": "927267048558592030",
         "auqw_ping_daily": "811305081063604290", 
-        "auqw_ping_boat": "811305081063604291"
+        "auqw_ping_boat": "811305081063604291",
+        "auqw_ping_client": "962954397237800990",
     }
 
     constructor(private client: Client, private base: BaseCog) {
@@ -233,7 +234,7 @@ export default class PrivateCog {
             .setTitle("**Ping Roles**")
             // .setAuthor("AutoQuest Worlds", this.base.files["resources"]["auths"]["auqw"]["image"])
             .setDescription('Get Pinged during certain events.\n' + 
-                'To Remove these roles, just click the role buttons again.\n\n' +
+                'To **REMOVE** these roles, just click the role buttons again.\n\n' +
                 '**Roles**:' + 
                 '<:TyNpAp:812605163994742815> <@&811305081063604290> - Alina\'s AQW Daily Gift/Boost!' +
                 '⛵ <@&811305081063604291> - New boats are made by our Staff.​')
@@ -241,11 +242,15 @@ export default class PrivateCog {
             .addComponents(
                 new MessageButton()
                     .setCustomId('auqw_ping_daily')
-                    .setLabel('Get Daily')
+                    .setLabel('Daily')
                     .setStyle('SUCCESS'),
                 new MessageButton()
                     .setCustomId('auqw_ping_boat')
-                    .setLabel('Get Boat Notif')
+                    .setLabel('Boat Notif.')
+                    .setStyle('SUCCESS'),
+                new MessageButton()
+                    .setCustomId('auqw_ping_client')
+                    .setLabel('Client Notif.')
                     .setStyle('SUCCESS'),
             );
                
