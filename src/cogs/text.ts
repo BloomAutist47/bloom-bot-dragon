@@ -140,8 +140,8 @@ export default class TextCog {
     async cmdUploadFile(mode: string, source, defered: boolean = false) {
 
         // Chekc if Bloom
-        if (source.author.id != this.files["resources"]["bloom-id"]) {
-            await source.reply("You're not bloom.")
+        if (!this.files["resources"]["textUploadAllowedUsers"].includes(source.author.id)) {
+            await source.reply("You're not Allowed to use this cmd.")
             return
         }
 

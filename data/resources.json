@@ -106,5 +106,9 @@
     },
     "auqw": {
         "template": "https://discord.new/rntDVgbpUSzW"
-    }
+    },
+    "textUploadAllowedUsers": [
+        "252363724894109700",
+        "125353377759625216"
+    ]
 }
