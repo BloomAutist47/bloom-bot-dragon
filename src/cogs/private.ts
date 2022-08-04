@@ -69,7 +69,6 @@ export default class PrivateCog {
                     console.log("what");
 
                     // const selected_role: RoleResolvable = await interaction.guild!.roles.fetch(targetColorID) as RoleResolvable
-                    console.log(targetColorID);
                     await member.roles.add(targetColorID)
 
                     // // Reply
@@ -125,8 +124,8 @@ export default class PrivateCog {
                         return
                     // Add
                     } else {
-                        const selected_role: RoleResolvable = await interaction.guild!.roles.fetch(roleID) as RoleResolvable
-                        await member.roles.add(selected_role)
+                        // const selected_role: RoleResolvable = await interaction.guild!.roles.fetch(roleID) as RoleResolvable
+                        await member.roles.add(roleID)
                         await interaction.editReply({ content: `<@${interaction.user.id}> Role Added!: <@&${roleID}>` });
                         return
                     }
