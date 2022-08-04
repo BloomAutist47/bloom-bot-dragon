@@ -66,9 +66,11 @@ export default class PrivateCog {
                         await interaction.editReply({ content: `<@${interaction.user.id}> You __already have__ this role: <@&${targetColorID}>` });
                         return
                     }
+                    console.log("what");
 
-                    const selected_role: RoleResolvable = await interaction.guild!.roles.fetch(targetColorID) as RoleResolvable
-                    await member.roles.add(selected_role)
+                    // const selected_role: RoleResolvable = await interaction.guild!.roles.fetch(targetColorID) as RoleResolvable
+                    console.log(targetColorID);
+                    await member.roles.add(targetColorID)
 
                     // // Reply
                     await interaction.editReply({ content: `<@${interaction.user.id}> Color role updated!: <@&${targetColorID}>` });
