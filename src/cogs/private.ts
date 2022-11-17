@@ -172,7 +172,7 @@ export default class PrivateCog {
             .setColor(this.base.color)
             .setTitle("**Bot Maker Role**")
             // .setAuthor("AutoQuest Worlds", this.base.files["resources"]["auths"]["auqw"]["image"])
-            .setDescription('**Roles**:\n<@&928630244859052062> (Normal)\n<@&836018846905008148> (Godlike)\n\n' + 
+            .setDescription('**Roles**:\n<@&1008293278585737223> (Normal)\n<@&1008293278606696458> (Godlike)\n\n' + 
                 '**Privilige**: Ability to upload bots to the [Portal](https://auqw.tk/), hidden (autistic) channels, and early access to Bot Clients during Development.\n\n' +
                 '**How to get**:\n' +
                 '1. Join [Pearl Harbor: Prototype](https://discord.gg/9hdNDf9msa) Server\n' +
