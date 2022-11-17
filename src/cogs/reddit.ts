@@ -271,7 +271,9 @@ export default class RedditCog {
                 for (const channelID in this.base.aqwChannels) {
                     try {
                         let loginChannel = await this.client.channels.cache.get(this.base.aqwChannels[channelID]) as TextChannel
-                        await loginChannel.send({ embeds: [embed] })
+                        if (Object.keys(loginChannel).length !== 0) {
+                            await loginChannel.send({ embeds: [embed] })
+                        }
                     } catch (error) {
                         console.log("[Reddit] Error:> ", error)
                     }
