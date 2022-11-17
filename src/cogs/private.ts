@@ -188,7 +188,7 @@ export default class PrivateCog {
             // .setAuthor("AutoQuest Worlds", this.base.files["resources"]["auths"]["auqw"]["image"])
             .setDescription('These roles opens a channel\n\n' +
                 '**Possible Roles**:\n' +
-                '<@&1008293280598990900> - Open the Terraria Chat.\n')
+                '<@&1008293278543781941> - Open the Terraria Chat.\n')
         const channelMessageRow = new MessageActionRow()
             .addComponents(
                 new MessageButton()
@@ -206,7 +206,7 @@ export default class PrivateCog {
             .setDescription('These roles are given by a Server Staff.\nTo get them, DM a Staff.\n\n' +
                 '**Possible Roles**:\n' +
                 '<@&1008293278761889810> - If we see you help others a lot in this server, we\'ll give you the Helper role!.\n' +
-                '<@&831241705801777183> - Assist editors and contribute valuable information to the AQW Wiki (stuff like fixing typos doesn\'t count).\n' +
+                '<@&1008293278564757537> - Assist editors and contribute valuable information to the AQW Wiki (stuff like fixing typos doesn\'t count).\n' +
                 '<@&1008293278162092081> - Be an Official [AQW Wiki Editor](http://aqwwiki.wikidot.com/) (apply in the [official wiki discord](https://discord.gg/stMbcMr) after editing the wiki for 30+ days)\n\n' +
 
                 '<@&1008293278564757536> - Verified AQW Whale.\n' +
