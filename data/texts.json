@@ -85,7 +85,7 @@
         },
         "getgrim": {
             "title": "How to Find Boats.",
-            "description": "Looking for AQW Boats? Look no further. Visit our portal site where we distribute the Grimoire application and various boats for it.\n\n**📕 Download Boats and Client here**: https://auqw.tk/\n",
+            "description": "Looking for AQW Boats? Look no further. Visit our portal site where we distribute the Grimoire and Skua applications and various boats for it.\n\n**📕 Download Boats and Client here**: https://auqw.tk/\n",
             "numbering": false,
             "content": {
                 "📌 Download & Install Skua": {
@@ -97,8 +97,11 @@
                 "📌 How to run Bots": {
                     "text": "-> Open `Skua.Manager.exe`.\n\n-> Follow the github authentication steps\n> Create a github account or login with existing account first so the browser opens directly to authentication page during the process.\n\n-> To install a boat.\n> All boats are automatically downloaded and updated after github authentication AND updated every time a Skua client is opened.\n\n-> To run a boat;\n> On Skua toolbar -> Scripts -> Load Script -> Choose desired script -> Start Script."
                 },
+                "📌 Things to Remember": {
+                    "text": "**Grim**:\n-> For now, many Boats on the portal may work on Grimoire 3.8+ PRO v1.7.8., but we will start making Boats for GrimLite only so get that.\n-> If your bot isn't loading, it's because you're using an outdated version of Grimoire. Current version is 1.3.4.\n\n**Skua**:\n-> If getting Github API limit reached error, run Skua.Manager.exe and make sure the github authentication is completed.\n-> Most boats for Skua are \"Master Boats\", meaning you run the file with 0 at the start of it's name and it will check what you're missing and call the required boat files it needs by itself. \n-> If you can't find the boat you need, try searching a keyword for it in the `Scripts` -> `Get Scripts` menu. If doesn't exist check <#1042775417980985384>, if still doesn't exist, type `-form` in <#1008293280087289983> and fill it out to request it. \n-> If there's a new release **DO NOT** fill out a form for it. Our Skua Heroes are already working on it and you're just clogging up the requests list."
+                },
                 "📌 Credits": {
-                    "text": "-> Breno for creating Skua (his seggsy dream bot)"
+                    "text": "-> Breno for creating Skua (his seggsy dream bot)\n-> Ganku for the latest Grimlite\n\n-> Biney for creating the original Grimoire\n-> Satan for revamping Grimoire 3.8 to Grimoire 3.8+ PRO up until v1.7.7\n-> Rodit for creating a Flash EoL patch in v1.7.8. and for RBot\n-> 133Spider for creating AQlite\n-> Satan and Cat for creating GrimLite"
                 }
             }
         },
