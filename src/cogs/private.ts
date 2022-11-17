@@ -20,10 +20,10 @@ export default class PrivateCog {
     private colorIDArray: Array<string> = []
 
     private auqwButtonsIDs: Object = {
-        "terraria_button_auqw": "927267048558592030",
-        "auqw_ping_daily": "811305081063604290", 
-        "auqw_ping_boat": "811305081063604291",
-        "auqw_ping_client": "962954397237800990",
+        "terraria_button_auqw": "1008293278543781941",
+        "auqw_ping_daily": "1008293278543781947", 
+        "auqw_ping_boat": "1008293278543781944",
+        "auqw_ping_client": "1008293278543781945",
     }
 
     constructor(private client: Client, private base: BaseCog) {
@@ -214,20 +214,20 @@ export default class PrivateCog {
 
 
         // War Embed
-        const warEmbed = new MessageEmbed()
-            .setColor(this.base.color)
-            .setTitle("**War Roles**")
-            // .setAuthor("AutoQuest Worlds", this.base.files["resources"]["auths"]["auqw"]["image"])
-            .setDescription('These roles are given by a Server Staff.\nTo get them, Submit a Screenshot Proof of your army (4+ Alts).\n\n' +
-                            '**Possible Roles**:\n' +
-                            '<@&811305081063604289> - Have 4+ Level 100 alts with decent support classes.\n' +
-                            '<@&870304318115438592> - Have 4+ Hollowborn Reaper\'s Scythe.\n' +
-                            '<@&872139453588717659> - Have 4+ banned accounts.\n' +
-                            '<@&873643637043527830> - Have 4+ VHLs (not IoDA).\n' +
-                            '<@&873643701971325008> - Have 4+ LRs (not IoDA).\n' +
-                            '<@&813793980453879818> - Have 4+ Necrotic Sword of Doom.\n' +
-                            '<@&867365483597791232> - Have the Exalted Apotheosis on 4+\n' +
-                            '<@&872211457276772422> - Have a fucking pimped out army of 10+ accs.')
+        // const warEmbed = new MessageEmbed()
+        //     .setColor(this.base.color)
+        //     .setTitle("**War Roles**")
+        //     // .setAuthor("AutoQuest Worlds", this.base.files["resources"]["auths"]["auqw"]["image"])
+        //     .setDescription('These roles are given by a Server Staff.\nTo get them, Submit a Screenshot Proof of your army (4+ Alts).\n\n' +
+        //                     '**Possible Roles**:\n' +
+        //                     '<@&811305081063604289> - Have 4+ Level 100 alts with decent support classes.\n' +
+        //                     '<@&870304318115438592> - Have 4+ Hollowborn Reaper\'s Scythe.\n' +
+        //                     '<@&872139453588717659> - Have 4+ banned accounts.\n' +
+        //                     '<@&873643637043527830> - Have 4+ VHLs (not IoDA).\n' +
+        //                     '<@&873643701971325008> - Have 4+ LRs (not IoDA).\n' +
+        //                     '<@&813793980453879818> - Have 4+ Necrotic Sword of Doom.\n' +
+        //                     '<@&867365483597791232> - Have the Exalted Apotheosis on 4+\n' +
+        //                     '<@&872211457276772422> - Have a fucking pimped out army of 10+ accs.')
 
         // Ping Embed
         const pingEmbed = new MessageEmbed()
@@ -237,9 +237,9 @@ export default class PrivateCog {
             .setDescription('Get Pinged during certain events.\n' + 
                 'To **REMOVE** these roles, just click the role buttons again.\n\n' +
                 '**Roles**:\n' + 
-                '<:TyNpAp:812605163994742815> <@&811305081063604290> - Alina\'s AQW Daily Gift/Boost!\n' +
-                '⛵ <@&811305081063604291> - New boats are made by our Staff. \n' +
-                '⛵ <@&962954397237800990> - Get pinged with Client Updates.​'
+                '<:TyNpAp:812605163994742815> <@&1008293278543781947> - Alina\'s AQW Daily Gift/Boost!\n' +
+                '⛵ <@&1008293278543781944> - New boats are made by our Staff. \n' +
+                '⛵ <@&1008293278543781945> - Get pinged with Client Updates.​'
                 )
         const pingMessageRow = new MessageActionRow()
             .addComponents(
@@ -288,7 +288,7 @@ export default class PrivateCog {
             );
 
 
-        
+            // { name: "War Roles", content: "\n​", embeds: [warEmbed] },
         // Sending Embeds
         var tocTexts: string = ""
         var tocCount: number = 1
@@ -296,7 +296,6 @@ export default class PrivateCog {
             { name: "Bot Maker Role", content: "\n​", embeds: [botEmbed] },
             { name: "Channel Roles", content: "\n​", embeds: [channelEmbed], components: [channelMessageRow] },
             { name: "Misc Roles", content: "\n​", embeds: [miscEmbed] },
-            { name: "War Roles", content: "\n​", embeds: [warEmbed] },
             { name: "Ping Roles", content: "\n​", embeds: [pingEmbed], components: [pingMessageRow] },
             { name: "Color Roles", content: "\n​", embeds: [colorEmbed], components: [colorMessageRow] },
         ]
