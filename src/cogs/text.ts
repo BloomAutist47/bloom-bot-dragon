@@ -161,6 +161,7 @@ export default class TextCog {
         
         // Process text for sending
         const data = await this.base.getWebData(url)
+        console.log(data)
         const texts = data.split("\n")
         let textList: Array<string> = []
         let textRaw: string = ""
