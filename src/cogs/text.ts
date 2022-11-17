@@ -161,7 +161,7 @@ export default class TextCog {
         
         // Process text for sending
         const data = await this.base.getWebData(url)
-        console.log(data)
+        console.log("doneeeeeeee")
         const texts = data.split("\n")
         let textList: Array<string> = []
         let textRaw: string = ""
@@ -178,7 +178,9 @@ export default class TextCog {
 
         // Create new channel and delete old channel
         const channel = await source.channel.clone()
+        console.log("eerrrrrrrrrrrrrrr")
         await source.channel.delete()
+        console.log(channel)
 
         for (const text of textList) {
             await channel.send(text)
