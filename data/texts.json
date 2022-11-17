@@ -85,23 +85,20 @@
         },
         "getgrim": {
             "title": "How to Find Boats.",
-            "description": "Looking for AQW Boats or the Latest Grim? Look no further. Visit our portal site where we distribute the Grimoire application and various boats for it.\n\n**📕 Download Boats and Client here**: https://auqw.tk/\n",
+            "description": "Looking for AQW Boats? Look no further. Visit our portal site where we distribute the Grimoire application and various boats for it.\n\n**📕 Download Boats and Client here**: https://auqw.tk/\n",
             "numbering": false,
             "content": {
-                "📌 1. Download & Install Grimlite": {
-                    "text": "-> Get `Grimlite Rev` from the portal. \n -> Extract with winrar/winzip to empty folder.\n-> Run `Grimoire.exe`."
+                "📌 1. Download & Install Skua": {
+                    "text": "-> Get `Skua` from the portal and its dependencies. \n -> Extract skua with winrar/winzip to empty folder.\n-> Install dependencies and Run `Skua.Manager.exe`."
                 },
                 "📌 1.2. How to Extract rar files.": {
                     "text": "-> If you already know how to extract a file, skip this step.\n-> To extract a file, you will need the WinRAR or the 7zip application\n> WinRAR Download Link: [Click here](https://www.win-rar.com/postdownload.html?&L=0)\n> 7zip Download Links: [Click here](https://www.7-zip.org/download.html)\n> Download whichever one you want.\n\n-> Find the `.rar` file in your Downloads folder.\n-> Double click to open it with WinRAR/7zip.\n-> Right click `..` and select Extract to a specified folder.\n-> Select a new empty folder on your computer and click Ok."
                 },
                 "📌 2. How to run Bots": {
-                    "text": "-> Open Grimoire.exe.\n> If it's not opening, you may have to unblock it.\n> Right Click Grimoire.exe -> Properties -> Unblock -> Apply.\n\n-> To install a boat\n> Open Grimlite\\Grimoire folder, place the boats on the `Bots` folder.\n\n-> To run a boat;\n> On Grimoire toolbar -> Bot -> Manager -> On `Bots` tab -> Choose whichever bot you just installed."
-                },
-                "📌 3. Things to Remember": {
-                    "text": "-> For now, many Boats on the portal may work on Grimoire 3.8+ PRO v1.7.8., but we will start making Boats for GrimLite only so get that.\n-> If your bot isn't loading, it's because you're using an outdated version of Grimoire."
+                    "text": "-> Open `Skua.Manager.exe`.\n\n-> Follow the github authentication steps\n> Create a github account or login with existing account first so the browser opens directly to authentication page during the process.\n\n-> To install a boat.\n> All boats are automatically downloaded and updated after github authentication AND updated every time a Skua client is opened.\n\n-> To run a boat;\n> On Skua toolbar -> Scripts -> Load Script -> Choose desired script -> Start Script."
                 },
                 "📌 Credits": {
-                    "text": "-> Biney for creating the original Grimoire\n-> EmperorArts for Updating Grimoire\n -> Satan for revamping Grimoire 3.8 to Grimoire 3.8+ PRO up until v1.7.7\n-> Rodit for creating a Flash EoL patch in v1.7.8. and for RBot\n-> 133Spider for creating AQlite\n-> Satan and Cat for creating GrimLite"
+                    "text": "-> Breno for creating Skua (his seggsy dream bot)"
                 }
             }
         },
