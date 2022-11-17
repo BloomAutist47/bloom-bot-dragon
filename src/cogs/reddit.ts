@@ -259,7 +259,11 @@ export default class RedditCog {
                 for (const channelID in this.base.auqwChannels) {
                     try {
                         let loginChannel = await this.client.channels.cache.get(this.base.auqwChannels[channelID]) as TextChannel
-                        await loginChannel.send({ embeds: [embed] })
+                        if (loginChannel !== undefined) {
+
+                            await loginChannel.send({ embeds: [embed] })
+                        }
+
                     } catch (error) {
                         console.log("[Reddit] Error:> ", error)
                     }
@@ -271,11 +275,11 @@ export default class RedditCog {
                 for (const channelID in this.base.aqwChannels) {
                     try {
                         let loginChannel = await this.client.channels.cache.get(this.base.aqwChannels[channelID]) as TextChannel
-                        if (Object.keys(loginChannel).length !== 0) {
+                        if (loginChannel !== undefined) {
                             await loginChannel.send({ embeds: [embed] })
                         }
                     } catch (error) {
-                        console.log("[Reddit] Error:> ", error)
+                        console.log("[Reddit] Error:> " + channelID, error)
                     }
 
                 }
