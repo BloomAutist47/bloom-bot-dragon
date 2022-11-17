@@ -77,7 +77,7 @@
                 "8. (RBot) Does not Open": {
                     "text": "🔹**Description**: Rbot Not Opening. You must be missing NET Requirements.\n🔹**Solution**:\n\n**Get Requirements**\n> Install the Latest `NET Desktop Runtime` and `ASP.NET Core Runtime` from [Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) or download all from here [Here](https://drive.google.com/file/d/1AJWv8kdNgPmxeUIgh2AUntxZPStnrr6g/view?usp=sharing).\n\n**If RBot still won't open.**\n> 1. Check Windows Defender or your anti-virus software.\n> 2. Open its protection history and see if its quarantining a part of RBot.\n> 3. If so, whitelist it and revert the quarantine. Possibly re-extract RBot too.\n\n"
                 },
-                "9. Skua": {
+                "9. (Skua) Help": {
                     "text": "🔹**Description**: Something's wrong with my skua.\n🔹**Solution**: Download and Install Skua's dependencies from [here](https://github.com/BrenoHenrike/Skua/releases/download/1.0.0.0/Skua.Dependencies.exe)."
                 }
 
@@ -88,13 +88,13 @@
             "description": "Looking for AQW Boats? Look no further. Visit our portal site where we distribute the Grimoire application and various boats for it.\n\n**📕 Download Boats and Client here**: https://auqw.tk/\n",
             "numbering": false,
             "content": {
-                "📌 1. Download & Install Skua": {
+                "📌 Download & Install Skua": {
                     "text": "-> Get `Skua` from the portal and its dependencies. \n -> Extract skua with winrar/winzip to empty folder.\n-> Install dependencies and Run `Skua.Manager.exe`."
                 },
-                "📌 1.2. How to Extract rar files.": {
+                "📌 How to Extract rar files.": {
                     "text": "-> If you already know how to extract a file, skip this step.\n-> To extract a file, you will need the WinRAR or the 7zip application\n> WinRAR Download Link: [Click here](https://www.win-rar.com/postdownload.html?&L=0)\n> 7zip Download Links: [Click here](https://www.7-zip.org/download.html)\n> Download whichever one you want.\n\n-> Find the `.rar` file in your Downloads folder.\n-> Double click to open it with WinRAR/7zip.\n-> Right click `..` and select Extract to a specified folder.\n-> Select a new empty folder on your computer and click Ok."
                 },
-                "📌 2. How to run Bots": {
+                "📌 How to run Bots": {
                     "text": "-> Open `Skua.Manager.exe`.\n\n-> Follow the github authentication steps\n> Create a github account or login with existing account first so the browser opens directly to authentication page during the process.\n\n-> To install a boat.\n> All boats are automatically downloaded and updated after github authentication AND updated every time a Skua client is opened.\n\n-> To run a boat;\n> On Skua toolbar -> Scripts -> Load Script -> Choose desired script -> Start Script."
                 },
                 "📌 Credits": {

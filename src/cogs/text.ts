@@ -88,7 +88,7 @@ export default class TextCog {
         
         // Botfix special treatment
         if (args == "botfix") {
-            const botfixLinks: Object = {"Grim":'', "RBot":"", "For Both":""}
+            const botfixLinks: Object = {"Grim":'', "RBot":"", "Skua": "", "For Both":""}
             for (const link in links) {
                 if (link.includes("(Grim)")) {
                     const title = link.replace("(Grim) ", "")
@@ -100,12 +100,18 @@ export default class TextCog {
                     botfixLinks["RBot"] += `[${title}](${links[link]})\n`
                     continue
                 }
+                if (link.includes("(Skua)")) {
+                    const title = link.replace("(Skua) ", "")
+                    botfixLinks["Skua"] += `[${title}](${links[link]})\n`
+                    continue
+                }
                 botfixLinks["For Both"] += `[${link}](${links[link]})\n`
             }
 
             tableEmbed.addField("For Both", botfixLinks["For Both"])
             tableEmbed.addField("Grim", botfixLinks["Grim"])
             tableEmbed.addField("RBot", botfixLinks["RBot"])
+            tableEmbed.addField("Skua", botfixLinks["Skua"])
 
             await source.channel.send({ embeds: [tableEmbed] , content: "\u200b"})
             return
